@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="cusLogin">
+    <ion-img class="cus1" src="assets/images/cusLogin.png"></ion-img>
+    <ion-img class="cus2" src="assets/images/cusLogin1.png"></ion-img>
+  </div>
+  <ion-img class="logo" src="assets/icon/logo.png"></ion-img>
 
+  <form id="formLogin" action="">
+    <ion-input class="inputAccout" placeholder="Tài khoản"><ion-icon name="person-circle-outline"></ion-icon></ion-input>
+    <ion-input class="inputPass" type="password" placeholder="Mật khẩu"><ion-icon name="lock-closed"></ion-icon></ion-input>
+    <ion-label class="forgotPassword">Quên mật khẩu?</ion-label>
+    <div class="login">
+      <ion-label>Đăng nhập</ion-label>
+      <ion-button expand="block" class="btn-Login"><ion-icon name="log-in-outline"></ion-icon></ion-button>
+    </div>
+    <ion-label class="or">hoặc</ion-label>
+    <div class="loginWith">
+      <ion-icon class="facebook" name="logo-facebook"></ion-icon>
+      <ion-icon class="google" name="logo-google"></ion-icon>
+    </div>
+  </form>
 </ion-content>
