@@ -2,7 +2,7 @@ ion-content {
   position: relative;
   align-items: center;
 
-  // Custom Login
+  // Custom Register
   .cus1 {
     position: absolute;
     width: 100%;
@@ -20,21 +20,28 @@ ion-content {
     z-index: 2;
   }
 
+  .cus3{
+      position: absolute;
+      width: 100%;
+      max-width: 140px;
+      top: 0;
+      left: 0;
+  }
+
   .logo {
     width: 120px;
     margin: 0 auto;
     margin-top: 90px;
   }
 
-  // Form Login
-  #formLogin {
+  #formRegister {
     position: relative;
     width: 100%;
     z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 
     ion-icon {
       font-size: 17px;
@@ -52,19 +59,12 @@ ion-content {
       font-size: 11px;
     }
 
-    .forgotPassword {
-      position: relative;
-      font-size: 11px;
-      margin-top: 15px;
-      left: 60px;
-    }
-
-    .login {
+    .register {
       margin-top: 30px;
       display: flex;
       align-items: center;
 
-      .btn-Login {
+      .btn-Register {
         position: absolute;
         width: 60px;
         --border-radius: 20px;
@@ -77,42 +77,13 @@ ion-content {
       }
     }
 
-    .or {
-      font-size: 10px;
-      margin-top: 23px;
-      margin-left: 10px;
-    }
-
-    // Login with GG, FB
-    .loginWith{
-      margin: 25px auto;
-      display: flex;
-      align-items: center;
-      .facebook{
-        font-size: 30px;
-        color: blue;
-        border-radius: 30px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        margin: 0 20px;
+    .login{
+        font-size: 12px;
+        margin-top: 30px;
+  
+        strong{
+          color:rgb(255, 106, 0);
+        }
       }
-      
-      .google{
-        font-size: 30px;
-        background-color: white;
-        color: green;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 30px;
-        margin: 0 10px;
-      }
-    }
-
-    .register{
-      font-size: 12px;
-      margin-top: 10px;
-
-      strong{
-        color:rgb(255, 106, 0);
-      }
-    }
   }
 }
