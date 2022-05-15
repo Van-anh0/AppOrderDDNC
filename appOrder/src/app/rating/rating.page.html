@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/" class="btn-back"></ion-back-button>
+    <ion-title class="title">Rating</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> </ion-content>
+
+<div class="container">
+  <h3>Bạn thấy sản phẩm của chúng tôi như thế nào? Hãy cho chúng tôi biết</h3>
+
+  <div class="rating">
+    <ul class="rating-list" *ngFor="let star of stars; let i= index">
+      <li
+        (click)="countStar(star)"
+        id="{{'starId'+i}}"
+        [ngClass]="{'selected': (star <= selectedValue)}"
+        (mouseover)="addClass(star)"
+        (mouseout)="removeClass(star)"
+      >
+        ★
+      </li>
+    </ul>
+  </div>
+
+  <strong style="font-size: 20px">Viết đánh giá</strong>
+  <div>
+    <ion-textarea class="writeReview" [placeholder]="placeholder">
+    </ion-textarea>
+  </div>
+  <ion-button class="btn-send">Gửi</ion-button>
+</div>
