@@ -9,7 +9,7 @@ export class RatingPage implements OnInit {
 
   stars: number[] = [1, 2, 3, 4, 5];
   selectedValue: number = 0;
-  placeholder="Hãy viết đánh giá của bạn ..."
+  placeholder="Đánh giá của bạn ..."
 
   constructor() { }
 

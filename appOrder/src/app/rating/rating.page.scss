@@ -1,5 +1,18 @@
+*{
+    font: Inria Sans;
+}
+
+.toolbar{
+    display: flex;
+    flex-direction: row;
+}
 .btn-back{
     float: left;
+}
+.lb-toolbar{
+    float: left;
+    font-size: 20px;
+    margin-top: 12px;
 }
 
 .container {
@@ -10,10 +23,6 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 32px;
-}
-
-.title {
-  text-align: center;
 }
 
 .rating-list {
@@ -42,21 +51,34 @@
 .writeReview{
     margin-top: 10px;
     border: 1px solid rgb(192, 192, 192);
-    border-radius: 5px;
+    border-radius: 20px;
     text-align: left;
-    text-indent: 10px;
+    text-indent: 18px;
     width: 100%;
     height: 200px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .btn-send{
-    margin-top: 10px;
-    border-radius: 50px;
+    margin-top: 20px;
+    --border-radius: 180px;
     width: 100px;
     --ion-color-primary: #ddd;
+    height: 40px;
 }
 .btn-send:hover{
     --ion-color-primary: #FFA724;
     --transition: 0.8s;
+}
+
+.lb-rating{
+    font-size: 18px;
+    margin-top: 2px;
+}
+.container-lb{
+    width: 100%;
+    height: 24px;
+    background-color: #DBDBDB;
+    display: flex;
+    flex-direction: column;
 }
