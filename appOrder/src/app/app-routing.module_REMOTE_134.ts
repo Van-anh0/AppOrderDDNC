@@ -6,16 +6,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-
   {
-    path: 'info-food',
-    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
-  {
-    path: 'order-food',
-    loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
-  },
-
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -24,11 +19,7 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+
 
 ];
 

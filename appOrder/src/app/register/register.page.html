@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="cusLogin">
+    <ion-img class="cus1" src="assets/images/cusLogin.png"></ion-img>
+    <ion-img class="cus2" src="assets/images/cusLogin1.png"></ion-img>
+    <ion-img class="cus3" src="assets/images/cus3.png"></ion-img>
+  </div>
+  <ion-img class="logo" src="assets/icon/logo.png"></ion-img>
+
+  <form id="formRegister" action="">
+    <ion-input class="inputAccout" placeholder="Tài khoản"><ion-icon name="person-circle-outline"></ion-icon></ion-input>
+    <ion-input class="inputPass" type="password" placeholder="Mật khẩu"><ion-icon name="lock-closed"></ion-icon></ion-input>
+    <ion-input class="inputName" type="text" placeholder="Họ và tên"><ion-icon name="pencil-outline"></ion-icon></ion-input>
+    <ion-input class="inputEmail" type="email" placeholder="Email"><ion-icon name="mail-outline"></ion-icon></ion-input>
+    <div class="register">
+      <ion-label>Đăng ký</ion-label>
+      <ion-button expand="block" class="btn-Register"><ion-icon name="create-outline"></ion-icon></ion-button>
+    </div>
+    <ion-label class="login">Bạn đã có tài khoản? <strong (click)="gotoLoginPage()">Đăng nhập</strong></ion-label>
+  </form>
+</ion-content>

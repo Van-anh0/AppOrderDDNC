@@ -15,20 +15,12 @@ const routes: Routes = [
     path: 'order-food',
     loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
   },
-
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'order-food',
     pathMatch: 'full'
   },
+ 
 
 ];
 
