@@ -6,11 +6,22 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+
+  {
+    path: 'info-food',
+    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+  },
+  {
+    path: 'order-food',
+    loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
+  },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'order-food',
     pathMatch: 'full'
   },
+ 
+
 ];
 
 @NgModule({

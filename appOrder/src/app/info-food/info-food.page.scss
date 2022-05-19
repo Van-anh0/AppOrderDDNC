@@ -1,0 +1,86 @@
+ion-header {
+    background: transparent;
+
+    ion-item {
+        --background: transparent;
+    }
+}
+
+ion-content {
+    .main-header {
+        height: 290px;
+        width: 100%;
+        background: url("/assets/images/food.png");
+        -webkit-backgroud-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position: relative;
+
+        
+
+
+            .first {
+                margin-top: 120px;
+                margin-left: 20px;
+                margin-right: 20px;
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                color: white;
+
+                h1 {
+                    margin-top: -5px;
+                }
+
+                p {
+                    margin-top: -6px;
+                    font-size: 14px;
+                }
+
+                h3 {
+                    margin-top: -6px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .second {
+                margin-top: 170px;
+                margin-left: 172px;
+                margin-right: 20px;
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                color: red;
+                ion-button{
+                    padding: -5px;
+                    
+                    size: 2px;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: 10px;
+                }
+                
+            }
+
+        
+
+            
+    }
+
+    .body-main{
+       
+        background-color: white;
+        height: 50%;
+        width: 100%;
+        border-radius: 50px 50px 0 0;
+        position: absolute;
+        top: 290px;
+        left: 0;
+        h4{
+            margin-top: 50px;
+            padding-left: 40%;
+            background-color: rgb(194, 194, 194);
+        }
+    } 
+}
+
