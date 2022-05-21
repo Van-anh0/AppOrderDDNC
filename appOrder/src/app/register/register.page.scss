@@ -4,7 +4,7 @@ ion-content {
 
   // Custom Register
   .cus1 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     max-width: 90px;
     top: 0;
@@ -12,16 +12,16 @@ ion-content {
   }
 
   .cus2 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     max-width: 90px;
-    top: 30%;
+    margin-top: 50%;
     left: 0;
     z-index: 2;
   }
 
   .cus3{
-      position: absolute;
+      position: fixed;
       width: 100%;
       max-width: 140px;
       top: 0;
@@ -51,8 +51,8 @@ ion-content {
     ion-input {
       background-color: rgb(255, 255, 255);
       margin-top: 15px;
-      width: 240px;
-      height: 35px;
+      width: 87%;
+      height: 100%;
       border-radius: 20px;
       border: none;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -66,9 +66,9 @@ ion-content {
 
       .btn-Register {
         position: absolute;
-        width: 60px;
+        width: 20%;
         --border-radius: 20px;
-        right: 14px;
+        right: 10%;
         --background: rgb(255, 145, 0);
       }
 
