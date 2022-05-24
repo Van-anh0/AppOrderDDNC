@@ -1,0 +1,78 @@
+ion-header {
+  ion-back-button {
+    --icon-font-size: 18px;
+  }
+
+  ion-title {
+    font-size: 15px;
+    margin-left: -10%;
+  }
+}
+
+ion-content {
+    .tableOrders{
+        margin-top: 5%;
+        margin-left: 5%;
+        width: 25%;
+        height: 5%;
+        background-color: rgb(255, 145, 0);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+
+        p{
+            margin: 0 auto;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+
+    .item-order{
+        margin: 10px auto;
+        background-color: rgb(239, 239, 239);
+        width: 90%;
+        height: 24%;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        align-items: center;
+
+        ion-img{
+            position: relative;
+            left: 5%;
+            width: 40%;
+            height: 40%;
+            border-radius: 250px;
+            overflow: hidden;
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        }
+        p{
+            font-size: 12px;
+        }
+
+        .nameFood{
+            font-weight: 700;
+        }
+
+        ion-row{
+            align-items: center;
+        }
+
+        .inforFood{
+            position: relative;
+            left: 15%;
+            line-height: 10px;
+            margin-top: 6%;
+        }
+
+        ion-button{
+            position: relative;
+            left: 30%;
+            width: 70%;
+            height: 20px;
+            text-transform: none;
+            --background: rgb(255, 145, 0);
+            --border-radius: 10px;
+            font-size: 12px;
+        }
+    }
+}
