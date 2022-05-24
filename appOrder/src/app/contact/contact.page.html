@@ -1,15 +1,21 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button color = "light" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Contact</ion-title>
+    
+    <ion-title color="light">
+      Liên hệ
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+
+<ion-content [fullscreen]="true">
   <ion-row>
-    <ion-button>
+    <ion-button (click)="gotoTable()">
       <ion-col>
         <ion-img src="assets/icon/receptionist.png" alt=""></ion-img>
         Lễ tân
@@ -32,5 +38,39 @@
     </ion-button>
   </ion-row>
 
-
+ 
+  <!-- <ion-footer >
+    <div class="container-control">
+         <ion-button fill="clear" class="control-button">
+           <div>
+           <ion-icon name="home-outline"></ion-icon>
+           <span>Home</span>
+           </div>
+         </ion-button>
+         <ion-button fill="clear">
+           <div>
+             <ion-icon name="chatbubble-ellipses"></ion-icon>
+            <span>Message</span> 
+           </div>
+         </ion-button>
+         <ion-button fill="clear">
+           <div>
+             <ion-icon name="newspaper-outline"></ion-icon>
+            <span>Order</span> 
+           </div>
+         </ion-button>
+         <ion-button fill="clear">
+           <div>
+             <ion-icon name="call-outline"></ion-icon>
+             <span>Contact</span>
+           </div>
+         </ion-button>
+         <ion-button fill="clear">
+           <div>
+             <ion-icon name="settings"></ion-icon>
+            <span>Settings</span> 
+           </div>
+         </ion-button>
+     </div>
+   </ion-footer> -->
 </ion-content>

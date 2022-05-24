@@ -2,10 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  
 
   {
     path: 'info-food',
@@ -26,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home', 
+    redirectTo: 'bottom-tab-page', 
     pathMatch: 'full'
   },
   {
@@ -37,31 +34,22 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
-  {
-    path: 'setting',
-    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
-  },
-  {
-  path: 'message',
-    loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
-  },
+  
   {
     path: 'my-orders',
     loadChildren: () => import('./my-orders/my-orders.module').then( m => m.MyOrdersPageModule)
   },
 
-  {
-    path: 'order-table',
-    loadChildren: () => import('./order-table/order-table.module').then( m => m.OrderTablePageModule)
-  },
+  
     {
     path: 'category-food',
     loadChildren: () => import('./category-food/category-food.module').then( m => m.CategoryFoodPageModule)
   },
+  {
+    path: 'bottom-tab-page',
+    loadChildren: () => import('./bottom-tab-page/bottom-tab-page.module').then( m => m.BottomTabPagePageModule)
+  },
+
 ];
 
 @NgModule({

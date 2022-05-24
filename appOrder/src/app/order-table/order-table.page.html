@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
      <ion-buttons slot="start">
-      <ion-back-button defaultHref="/">
+      <ion-back-button color="light" defaultHref="/">
     </ion-back-button>
      </ion-buttons>
-       <ion-title>Đặt bàn</ion-title>
-    <ion-button slot="end">
+       <ion-title color="light">Đặt bàn</ion-title>
+    <ion-button slot="end" color="warning">
       <ion-icon name="bag-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -20,7 +20,7 @@
         <p>Bàn 1</p>
       </div>
     </div>
-    <div class="table">
+    <div class="table" (click)="gotoRating()">
       <div class="table-rec"></div>
       <div> 
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
@@ -56,7 +56,7 @@
       </div>
     </div>
   </div>
-  <ion-footer>
+  <!-- <ion-footer>
    <div class="container-control">
         <ion-button fill="clear" class="control-button">
           <div>
@@ -89,6 +89,6 @@
           </div>
         </ion-button>
     </div>
-  </ion-footer>
+  </ion-footer> -->
 </ion-content>
   

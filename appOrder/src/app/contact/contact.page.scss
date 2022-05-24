@@ -1,13 +1,3 @@
-ion-header {
-  ion-back-button {
-    --icon-font-size: 18px;
-  }
-
-  ion-title {
-    font-size: 15px;
-    margin-left: -10%;
-  }
-}
 
 ion-content {
   ion-button {
@@ -27,5 +17,45 @@ ion-content {
     margin: 20px auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+}
+
+ion-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  ion-button{
+    text-transform: capitalize !important;
+    text-transform: lowercase;
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .container-control{
+    font-size: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    border: 1px solid none;
+    background-color: #E1E1E1;
+    border-radius: 8px;
+    margin: 2% auto;
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    ion-button{
+      padding-inline-start: 0 !important;
+      padding-inline-end: 0 !important;
+      letter-spacing: 0;
+      :hover {
+        font-weight: 700;
+        color: black;
+      }
+    }
   }
 }
