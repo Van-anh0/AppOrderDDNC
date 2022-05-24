@@ -1,27 +1,67 @@
-#container {
+h1{
+  align-content: center;
   text-align: center;
-
-  position: absolute;
+}
+.food-card{
+  height: 120x;
+  width: 94%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #B9BCBE;
+  box-shadow: 2px 2px 4px black;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 20px;
+  img{
+    height: 120px;
+    width:120px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 10px;
+  }
+  h2{
+    font-size: 1em;
+  }
+}
+.left-image{
+  flex-direction: row-reverse;
+}
+ion-footer{
+  position: fixed;
+  bottom: 0;
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  ion-button{
+    text-transform: capitalize !important;
+    text-transform: lowercase;
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .container-control{
+    font-size: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    border: 1px solid none;
+    background-color: #E1E1E1;
+    border-radius: 8px;
+    margin: 2% auto;
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    ion-button{
+      padding-inline-start: 0 !important;
+      padding-inline-end: 0 !important;
+      letter-spacing: 0;
+      :hover {
+        font-weight: 700;
+        color: black;
+      }
+    }
+  }
 }

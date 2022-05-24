@@ -1,0 +1,33 @@
+// ion-header{
+//     ion-back-button{
+//         --icon-font-size: 18px;
+//     }
+
+//     ion-title{
+//         font-size: 15px;
+//         margin-left: -10%;
+//     }
+//}
+
+ion-content{
+    .notifications-container{
+        width: 90%;
+        height: 15%;
+        background-color: rgb(219, 219, 219);
+        margin: 20px auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+
+        p{
+            font-size: 14px;
+            margin-left: 5%;
+        }
+
+        ion-img{
+            width: 70%;
+            height: 70%;
+        }
+    }
+}

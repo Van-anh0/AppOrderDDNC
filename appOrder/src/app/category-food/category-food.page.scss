@@ -1,0 +1,62 @@
+.food-types-container{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px black;
+    .food-type{
+        width: 182px;
+        height: 182px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-image: url('/assets/Chef-Info.png');
+        h2{
+            text-align: center;
+            line-height: 1rem;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+ion-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  ion-button{
+    text-transform: capitalize !important;
+    text-transform: lowercase;
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .container-control{
+    font-size: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    border: 1px solid none;
+    background-color: #E1E1E1;
+    border-radius: 8px;
+    margin: 2% auto;
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    ion-button{
+      padding-inline-start: 0 !important;
+      padding-inline-end: 0 !important;
+      letter-spacing: 0;
+      :hover {
+        font-weight: 700;
+        color: black;
+      }
+    }
+  }
+}
