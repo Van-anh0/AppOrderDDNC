@@ -8,17 +8,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'order-food',
+    redirectTo: 'category-food',
     pathMatch: 'full'
   },
   {
     path: 'order-table',
     loadChildren: () => import('./order-table/order-table.module').then( m => m.OrderTablePageModule)
   },
-  {
-    path: 'order-food',
-    loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
+    {
+    path: 'category-food',
+    loadChildren: () => import('./category-food/category-food.module').then( m => m.CategoryFoodPageModule)
   },
+
 
 
 ];
