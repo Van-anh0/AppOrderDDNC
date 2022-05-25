@@ -12,4 +12,8 @@
   <ion-toolbar>
     <ion-searchbar></ion-searchbar>
   </ion-toolbar>
+
+  <div *ngFor = "let order of orderFoods">
+        <p id="id">{{order.name}}</p>
+  </div>
 </ion-content>

@@ -23,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'bottom-tab-page', 
+    redirectTo: //'bottom-tab-page', 
+    'order-food',
     pathMatch: 'full'
   },
   {
