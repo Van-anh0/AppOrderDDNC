@@ -33,6 +33,7 @@ export class LoginPage implements OnInit {
   }
   
   login(){
+    console.log('Đã vào login');
     this.appService.getAllUsers().subscribe(result => {
       const users = result.find((a: any) =>{
         return a.account === this.singInForm.value.account && a.password === this.singInForm.value.password

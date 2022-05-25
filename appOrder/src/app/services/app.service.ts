@@ -17,7 +17,7 @@ export class AppService {
   constructor(private http: HttpClient) {}
 
   getAllUsers() {
-    return this.http.get<any>('http://localhost:3000/users');
+    return this.http.get<any>('../../../assets/model/user.json');
   }
 
   getAllMyOrders() {
