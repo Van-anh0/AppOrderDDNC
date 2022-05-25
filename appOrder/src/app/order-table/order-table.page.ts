@@ -15,4 +15,8 @@ export class OrderTablePage implements OnInit {
   gotoRating(){
     this.router.navigateByUrl('/rating');
   }
+
+  gotoCart(){
+    this.router.navigateByUrl('/my-orders');
+  }
 }

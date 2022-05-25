@@ -35,7 +35,6 @@ ion-content {
         border-radius: 10px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         align-items: center;
-
         ion-img{
             position: relative;
             left: 5%;
@@ -55,24 +54,22 @@ ion-content {
 
         ion-row{
             align-items: center;
-        }
-
-        .inforFood{
-            position: relative;
-            left: 15%;
-            line-height: 10px;
-            margin-top: 6%;
-        }
-
-        ion-button{
-            position: relative;
-            left: 30%;
-            width: 70%;
-            height: 20px;
-            text-transform: none;
-            --background: rgb(255, 145, 0);
-            --border-radius: 10px;
-            font-size: 12px;
+            .inforFood{
+                position: relative;
+                left: 15%;
+                line-height: 10px;
+                margin-top: 6%;
+                width: 40%;
+                ion-button{
+                    left: 30%;
+                    width: 70%;
+                    height: 20px;
+                    text-transform: none;
+                    --background: rgb(255, 145, 0);
+                    --border-radius: 10px;
+                    font-size: 12px;
+                }
+            }
         }
     }
 }
