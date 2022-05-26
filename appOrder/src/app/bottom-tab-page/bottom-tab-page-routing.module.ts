@@ -1,3 +1,4 @@
+import { SettingPageModule } from './../setting/setting.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -45,7 +46,18 @@ const routes: Routes = [
         children:[
           {
             path:'',
-            loadChildren: () => import('../setting/setting.module').then( m => m.SettingPageModule)
+            loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+          }
+          
+
+        ]
+      },
+      {
+        path: 'settings',
+        children:[
+          {
+            path:'',
+            loadChildren: () => import('../setting/setting.module').then(m => m.SettingPageModule)
           }
           
 
