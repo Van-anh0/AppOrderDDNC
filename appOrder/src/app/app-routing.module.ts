@@ -5,12 +5,18 @@ const routes: Routes = [
   
 
   {
-    path: 'info-food',
+    path: 'order-food/:id',
     loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
   },
+
   {
     path: 'order-food',
     loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
+  },
+
+  {
+    path: 'info-food',
+    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
   },
 
   {
@@ -24,7 +30,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: //'bottom-tab-page', 
-    'order-food',
+    'my-orders',
     pathMatch: 'full'
   },
   {

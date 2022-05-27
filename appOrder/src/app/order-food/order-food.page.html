@@ -12,11 +12,23 @@
   <ion-toolbar>
     <ion-searchbar></ion-searchbar>
   </ion-toolbar>
+ 
 
-  <div *ngFor = "let order of orderFoods">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" *ngFor="let order of orderFoods" [routerLink]="[order.id]">
+          <div class="col_div">
+            <ion-img src = {{order.image}}></ion-img>
+            <p class="title">{{order.name}}</p>
+            <p class="price">{{order.amount}}</p>
+          </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+   
         
-        <p>{{order.name}}</p>
-  </div>
+ 
 
   
 </ion-content>

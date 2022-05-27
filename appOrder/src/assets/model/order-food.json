@@ -1,0 +1,33 @@
+[
+    {
+    "id":"1",
+    "image":"assets/images/product1.jpg",
+    "categoryID":"1",
+    "name":"Hamburger",
+    "amount":"60$",
+    "detail":"Thịt bò, salad, bánh mì",
+    "category":"Món âu",
+    "review":23
+    },
+    {
+    "id":"2",
+    "image":"assets/images/product1.jpg",
+    "categoryID":"1",
+    "name":"Hamburgermum",
+    "amount":"80$",
+    "detail":"Thịt bò, salad, bánh mì, phô mai",
+    "category":"Món âu",
+    "review":100
+    },
+
+    {
+    "id":"3",
+    "image":"assets/images/product1.jpg",
+    "categoryID":"1",
+    "name":"Hamburgermumi",
+    "amount":"90$",
+    "detail":"Thịt bò, salad, bánh mì, phô mai",
+    "category":"Món âu",
+    "review":230
+    }
+]

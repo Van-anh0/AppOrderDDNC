@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-order-food',
@@ -7,36 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderFoodPage implements OnInit {
 
-  constructor() { }
+  orderFoods:any = [];
+
+  constructor(public loadingController: LoadingController, private appService:AppService) { }
 
   ngOnInit() {
+    this.getData();
   }
 
-  orderFoods = [{
-    "id":"1",
-    "image":"assets/icon/cart.png",
-    "categoryID":"1",
-    "name":"Hamburger",
-    "amount":"60$",
-
-  },
-  {
-    "id":"2",
-    "image":"assets/icon/cart.png",
-    "categoryID":"1",
-    "name":"Hamburgermum",
-    "amount":"80$",
-
-  },
-
-  {
-    "id":"3",
-    "image":"assets/icon/cart.png",
-    "categoryID":"1",
-    "name":"Hamburgermumi",
-    "amount":"90$",
-
-  },
-]
+  getData(){
+    this.appService.getAllOrderFoods().subscribe(orderFoods => {
+      this.orderFoods = orderFoods;
+    })
+  }
 
 }
