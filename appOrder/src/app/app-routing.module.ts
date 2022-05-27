@@ -2,65 +2,73 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  
-
   {
     path: 'info-food',
-    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+    loadChildren: () =>
+      import('./info-food/info-food.module').then((m) => m.InfoFoodPageModule),
   },
   {
     path: 'order-food',
-    loadChildren: () => import('./order-food/order-food.module').then( m => m.OrderFoodPageModule)
+    loadChildren: () =>
+      import('./order-food/order-food.module').then(
+        (m) => m.OrderFoodPageModule
+      ),
   },
 
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () =>
+      import('./register/register.module').then((m) => m.RegisterPageModule),
   },
   {
     path: '',
-    redirectTo: 'bottom-tab-page', 
-    pathMatch: 'full'
+    redirectTo: 'bottom-tab-page',
+    pathMatch: 'full',
   },
   {
     path: 'rating',
-    loadChildren: () => import('./rating/rating.module').then( m => m.RatingPageModule)
+    loadChildren: () =>
+      import('./rating/rating.module').then((m) => m.RatingPageModule),
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfilePageModule),
   },
-  
   {
     path: 'my-orders',
-    loadChildren: () => import('./my-orders/my-orders.module').then( m => m.MyOrdersPageModule)
+    loadChildren: () =>
+      import('./my-orders/my-orders.module').then((m) => m.MyOrdersPageModule),
   },
 
-  
-    {
+  {
     path: 'category-food',
-    loadChildren: () => import('./category-food/category-food.module').then( m => m.CategoryFoodPageModule)
+    loadChildren: () =>
+      import('./category-food/category-food.module').then(
+        (m) => m.CategoryFoodPageModule
+      ),
   },
   {
     path: 'bottom-tab-page',
-    loadChildren: () => import('./bottom-tab-page/bottom-tab-page.module').then( m => m.BottomTabPagePageModule)
+    loadChildren: () =>
+      import('./bottom-tab-page/bottom-tab-page.module').then(
+        (m) => m.BottomTabPagePageModule
+      ),
   },
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
-
+export class AppRoutingModule {}
 
 // import { NgModule } from '@angular/core';
 // import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -90,7 +98,7 @@ export class AppRoutingModule { }
 //   },
 //   {
 //     path: '',
-//     redirectTo: 'home', 
+//     redirectTo: 'home',
 //     pathMatch: 'full'
 //   },
 //   {
@@ -117,7 +125,6 @@ export class AppRoutingModule { }
 //     path: 'my-orders',
 //     loadChildren: () => import('./my-orders/my-orders.module').then( m => m.MyOrdersPageModule)
 //   },
-
 
 // ];
 

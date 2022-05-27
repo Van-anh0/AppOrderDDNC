@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { environment } from 'src/environments/environment';
+import { BottomTabPagePage } from './bottom-tab-page/bottom-tab-page.page';
 
 // import {AngularFireModule} from '@angular/fire/compat';
 // import {AngularFireAuthModule} from '@angular/fire/compat/auth';
@@ -17,10 +18,10 @@ import { environment } from 'src/environments/environment';
 // @NgModule({
 //   declarations: [AppComponent],
 //   entryComponents: [],
-//   imports: [BrowserModule, 
-//     IonicModule.forRoot(), 
-//     AppRoutingModule, 
-//     AngularFireModule.initializeApp(environment.firebaseConfig), 
+//   imports: [BrowserModule,
+//     IonicModule.forRoot(),
+//     AppRoutingModule,
+//     AngularFireModule.initializeApp(environment.firebaseConfig),
 //     AngularFireAuthModule,
 //     AngularFireStorageModule,
 //     AngularFireDatabaseModule],
@@ -30,7 +31,7 @@ import { environment } from 'src/environments/environment';
 // export class AppModule {}
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BottomTabPagePage],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

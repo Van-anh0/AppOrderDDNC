@@ -15,7 +15,6 @@ const routes: Routes = [
             path:'',
             loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
           }
-     
         ]
       },
       {
@@ -25,7 +24,6 @@ const routes: Routes = [
             path:'',
             loadChildren: () => import('../message/message.module').then( m => m.MessagePageModule)
           }
-          
 
         ]
       },
@@ -36,7 +34,6 @@ const routes: Routes = [
             path:'',
             loadChildren: () => import('../order-table/order-table.module').then( m => m.OrderTablePageModule)
           }
-          
 
         ]
       },
@@ -47,7 +44,6 @@ const routes: Routes = [
             path:'',
             loadChildren: () => import('../setting/setting.module').then( m => m.SettingPageModule)
           }
-          
 
         ]
       },
@@ -58,7 +54,6 @@ const routes: Routes = [
             path:'',
             loadChildren: () => import('../contact/contact.module').then( m => m.ContactPageModule)
           }
-          
 
         ]
       },
@@ -75,7 +70,6 @@ const routes: Routes = [
     pathMatch:'full'
   }
 
-  
 ];
 
 @NgModule({
