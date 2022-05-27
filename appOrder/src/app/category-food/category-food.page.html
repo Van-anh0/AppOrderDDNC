@@ -1,21 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/">
+      <ion-back-button color="light" defaultHref="/">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title color="light">
       Thể loại
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+
+<ion-content>
+  
   <div class="food-types-container" >
-    <div class="food-type" *ngFor="let item of this.ll">
-      <h2>{{item}}</h2>
-      <p>100 món</p>
+    <div class="food-type" *ngFor="let item of this.ll" (click)="gotoOrderFood()" >
+      <h2 >{{item}} </h2>
+      <p >100 món</p>
     </div> 
+    
   </div>
 
  <!-- <ion-footer>
@@ -53,5 +56,3 @@
     </div>
   </ion-footer> -->
 </ion-content>
-  <app-bottom-tab-page>
-  </app-bottom-tab-page>

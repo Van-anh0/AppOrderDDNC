@@ -12,11 +12,13 @@ export class OrderTablePage implements OnInit {
   ngOnInit() {
   }
   
-  gotoRating(){
-    this.router.navigateByUrl('/rating');
-  }
+  
 
   gotoCart(){
     this.router.navigateByUrl('/my-orders');
+  }
+
+  gotoCategory(){
+    this.router.navigateByUrl('/category-food')
   }
 }

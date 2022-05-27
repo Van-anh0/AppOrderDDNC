@@ -18,7 +18,7 @@
   <h1>
     Món ăn phổ biến
   </h1>
-  <div *ngFor="let item of this.listFood;let i = index;">
+  <div *ngFor="let item of this.listFood;let i = index;" [routerLink]="[item.id]">
     <div class="food-card" [ngClass]="{'left-image': i%2===1}">
       <div>
         <img [src]="item.image" />

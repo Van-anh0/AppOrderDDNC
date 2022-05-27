@@ -13,6 +13,19 @@ const routes: Routes = [
   },
 
   {
+    path: 'home/:id',
+    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+  },
+
+  {
+    path: 'category-food/:id',
+    loadChildren: () =>
+      import('./order-food/order-food.module').then(
+        (m) => m.OrderFoodPageModule
+      ),
+  },
+
+  {
     path: 'order-food',
     loadChildren: () =>
       import('./order-food/order-food.module').then(
@@ -56,6 +69,10 @@ const routes: Routes = [
     path: 'my-orders',
     loadChildren: () =>
       import('./my-orders/my-orders.module').then((m) => m.MyOrdersPageModule),
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   },
 
   {

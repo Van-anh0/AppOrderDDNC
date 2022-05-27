@@ -21,7 +21,7 @@ export class CategoryFoodPage implements OnInit {
             .then(json=> json));
     console.log(this.ll);
   }
-  gotoContact(){
+  gotoOrderFood(){
     this.router.navigateByUrl('/order-food');
   }
 }
