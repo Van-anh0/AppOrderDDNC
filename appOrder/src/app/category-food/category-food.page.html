@@ -11,36 +11,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar></ion-searchbar>
-
-  <div class="food-types-container">
-    <div class="food-type">
-      <h2>Âu</h2>
+  <div class="food-types-container" >
+    <div class="food-type" *ngFor="let item of this.ll">
+      <h2>{{item}}</h2>
       <p>100 món</p>
-    </div>
-    <div class="food-type">
-      <h2>Á</h2>
-      <p>100 món</p>
-    </div>
-    <div class="food-type">
-      <h2>Ý</h2>
-      <p>100 món</p>
-    </div>
-    <div class="food-type">
-      <h2>FastFood</h2>
-      <p>100 món</p>
-    </div>
-    <div class="food-type">
-      <h2>Chiên</h2>
-      <p>100 món</p>
-    </div>
-    <div class="food-type">
-      <h2>Salad</h2>
-      <p>100 món</p>
-    </div>
+    </div> 
   </div>
-  
-  <!-- <ion-footer>
+
+ <!-- <ion-footer>
     <div class="container-control">
       <ion-button fill="clear" class="control-button">
         <div>
@@ -75,3 +53,5 @@
     </div>
   </ion-footer> -->
 </ion-content>
+  <app-bottom-tab-page>
+  </app-bottom-tab-page>

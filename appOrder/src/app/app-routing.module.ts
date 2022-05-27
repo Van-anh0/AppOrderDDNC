@@ -22,7 +22,8 @@ const routes: Routes = [
 
   {
     path: 'info-food',
-    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+    loadChildren: () =>
+      import('./info-food/info-food.module').then((m) => m.InfoFoodPageModule),
   },
 
   {
