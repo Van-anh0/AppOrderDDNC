@@ -52,17 +52,7 @@ const routes: Routes = [
 
         ]
       },
-      {
-        path: 'settings',
-        children:[
-          {
-            path:'',
-            loadChildren: () => import('../setting/setting.module').then(m => m.SettingPageModule)
-          }
-          
-
-        ]
-      },
+     
       {
         path: 'contact',
         children:[
