@@ -14,15 +14,23 @@
 <ion-content [fullscreen] = "true" color="light">
 <div class = "main-header">
 
-    <div class = "first">
+   
+    <div>
+ <!-- *ngIf="orderFood"> -->
+    <ion-img class ="first" src="/assets/images/food.png"></ion-img>
+    <div class = "well">
+       <h1>Hambuger</h1>
+      <p>Bò, gà, salat</p>
+      <h3>Món Âu</h3>
+       <!-- <h1>{{orderFood.name}}</h1>  
+        <p>{{orderFood.detail}}</p>
+        <h3>{{orderFood.category}}</h3> -->
       
-       <h1>Hamburger</h1>  
-        <p>Thịt bò, salat, bánh mì</p>
-        <h3>Món âu</h3>
       
-      
-      <p><img height="15" width="15" src = "assets/icon/star.png"> 4.8 (<span>286</span> Đánh giá)</p>
+      <p><img height="15" width="15" src = "assets/icon/star.png"> 4.8 (<span>235</span> Đánh giá)</p>
     </div>
+    </div>
+   
 
     
 
@@ -37,6 +45,20 @@
 </div>
 <div class = "body-main">
    <h4>Gợi ý</h4>
+   <div class="suggest">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" *ngFor="let order of orderFoods">
+            <div class="col_div">
+              <ion-img src = {{order.image}}></ion-img>
+              <p class="title">{{order.name}}</p>
+              <p class="price">{{order.amount}}</p>
+            </div>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+   </div>
 </div>
 
 

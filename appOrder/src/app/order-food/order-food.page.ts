@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-order-food',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderFoodPage implements OnInit {
 
-  constructor() { }
+  orderFoods:any = [];
+
+  constructor(public loadingController: LoadingController, private appService:AppService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(){
+    this.appService.getAllOrderFoods().subscribe(orderFoods => {
+      this.orderFoods = orderFoods;
+    })
   }
 
 }

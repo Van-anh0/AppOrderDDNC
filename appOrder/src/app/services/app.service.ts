@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { faArrowDownShortWide } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root',
@@ -23,4 +24,10 @@ export class AppService {
   getAllMyOrders() {
     return this.http.get<any>('../../../assets/model/my-order.json');
   }
+
+  getAllOrderFoods(){
+    return this.http.get<any>('../../../assets/model/order-food.json');
+  }
+
+ 
 }
