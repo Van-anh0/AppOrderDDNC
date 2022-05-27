@@ -12,7 +12,7 @@ export class ContactPage implements OnInit {
   ngOnInit() {
   }
 
-  gotoTable(){
-    this.router.navigateByUrl('/order-table');
-  }
+  // gotoTable(){
+  //   this.router.navigateByUrl('/order-table');
+  // }
 }

@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'my-orders',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
