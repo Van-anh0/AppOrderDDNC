@@ -1,13 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning">
-     <ion-buttons slot="start">
-      <ion-back-button color="light" defaultHref="/">
-    </ion-back-button>
-     </ion-buttons>
-       <ion-title color="light">Đặt bàn</ion-title>
-    <ion-button slot="end" color="warning">
-      <ion-icon name="bag-outline"></ion-icon>
-    </ion-button>
+    <ion-title color="light">Đặt bàn</ion-title>
+    <ion-icon name="cart" slot="end" (click)="gotoCart()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -15,42 +9,42 @@
   <div class="table-container">
     <div class="table table-fill">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 1</p>
       </div>
     </div>
     <div class="table" (click)="gotoRating()">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 2</p>
       </div>
     </div>
     <div class="table">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 3</p>
       </div>
     </div>
     <div class="table">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 4</p>
       </div>
     </div>
     <div class="table table-fill">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 5</p>
       </div>
     </div>
     <div class="table">
       <div class="table-rec"></div>
-      <div> 
+      <div>
         <ion-icon src="/assets/icon/ring.svg"></ion-icon>
         <p>Bàn 6</p>
       </div>
@@ -91,4 +85,3 @@
     </div>
   </ion-footer> -->
 </ion-content>
-  
