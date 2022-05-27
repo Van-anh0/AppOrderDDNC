@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BottomTabPagePage } from './bottom-tab-page/bottom-tab-page.page';
+
 
 // import {AngularFireModule} from '@angular/fire/compat';
 // import {AngularFireAuthModule} from '@angular/fire/compat/auth';
@@ -33,7 +33,7 @@ import { BottomTabPagePage } from './bottom-tab-page/bottom-tab-page.page';
 // export class AppModule {}
 
 @NgModule({
-  declarations: [AppComponent, BottomTabPagePage],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(),HttpClientModule],
   providers: [Storage, HttpClientModule, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

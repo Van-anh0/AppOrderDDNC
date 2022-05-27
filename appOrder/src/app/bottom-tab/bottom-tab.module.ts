@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BottomTabPagePageRoutingModule } from './bottom-tab-page-routing.module';
+import { BottomTabPageRoutingModule } from './bottom-tab-routing.module';
 
-import { BottomTabPagePage } from './bottom-tab-page.page';
+import { BottomTabPage } from './bottom-tab.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BottomTabPagePageRoutingModule
+    BottomTabPageRoutingModule
   ],
-  declarations: [BottomTabPagePage]
+  declarations: [BottomTabPage]
 })
-export class BottomTabPagePageModule {}
+export class BottomTabPageModule {}

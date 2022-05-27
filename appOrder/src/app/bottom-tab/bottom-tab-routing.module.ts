@@ -1,13 +1,12 @@
-import { SettingPageModule } from './../setting/setting.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BottomTabPagePage } from './bottom-tab-page.page';
+import { BottomTabPage } from './bottom-tab.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: BottomTabPagePage,
+    component: BottomTabPage,
     children: [
       {
         path: 'home',
@@ -78,11 +77,10 @@ const routes: Routes = [
     redirectTo: 'tabs/home',
     pathMatch: 'full'
   }
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class BottomTabPagePageRoutingModule { }
+export class BottomTabPageRoutingModule {}

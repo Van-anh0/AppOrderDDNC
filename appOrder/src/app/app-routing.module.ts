@@ -17,13 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
   },
 
-  {
-    path: 'category-food/:id',
-    loadChildren: () =>
-      import('./order-food/order-food.module').then(
-        (m) => m.OrderFoodPageModule
-      ),
-  },
+ 
 
   {
     path: 'order-food',
@@ -82,13 +76,12 @@ const routes: Routes = [
         (m) => m.CategoryFoodPageModule
       ),
   },
+  
   {
-    path: 'bottom-tab-page',
-    loadChildren: () =>
-      import('./bottom-tab-page/bottom-tab-page.module').then(
-        (m) => m.BottomTabPagePageModule
-      ),
+    path: 'bottom-tab',
+    loadChildren: () => import('./bottom-tab/bottom-tab.module').then( m => m.BottomTabPageModule)
   },
+
 ];
 
 @NgModule({

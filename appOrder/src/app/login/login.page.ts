@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   gotoHome(){
-    this.router.navigateByUrl('/bottom-tab-page')
+    this.router.navigateByUrl('/bottom-tab')
   }
   
   login(){
@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
         return a.account === this.singInForm.value.account && a.password === this.singInForm.value.password
       });
       if(users){
-        this.router.navigateByUrl('/bottom-tab-page');
+        this.router.navigateByUrl('/bottom-tab');
       }
       else{
         alert('error');

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BottomTabPagePage } from './bottom-tab-page.page';
+import { BottomTabPage } from './bottom-tab.page';
 
-describe('BottomTabPagePage', () => {
-  let component: BottomTabPagePage;
-  let fixture: ComponentFixture<BottomTabPagePage>;
+describe('BottomTabPage', () => {
+  let component: BottomTabPage;
+  let fixture: ComponentFixture<BottomTabPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BottomTabPagePage ],
+      declarations: [ BottomTabPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BottomTabPagePage);
+    fixture = TestBed.createComponent(BottomTabPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
