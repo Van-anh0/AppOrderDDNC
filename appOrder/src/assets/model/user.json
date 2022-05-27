@@ -10,5 +10,11 @@
         "account": "thiensoncva02@gmail.com",
         "password": "123456",
         "name": "thien son 2"
+    },
+    {
+        "id": "3",
+        "account": "1910115@dlu.edu.vn",
+        "password": "123456",
+        "name": "vân anh"
     }
 ]    
