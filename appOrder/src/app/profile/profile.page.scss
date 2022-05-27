@@ -63,7 +63,10 @@
     }
     ion-button {
         color: black;
+        position: absolute;
         float: right;
+        right: 0%;
+        margin-top: 30px;
     }
     div {
         margin-top: 30px;
@@ -99,38 +102,5 @@
         height: 25px;
         width: 25px;
         margin: 0 7px 0 7px;
-    }
-}
-
-//////////// Control ////////////////
-.container-control {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    border: 1px solid none;
-    background-color: #E1E1E1;
-    border-radius: 8px;
-    margin: 2% auto;
-    font-family: 'Roboto';
-    width: 95%;
-    //padding: 1rem;
-    ///////////////////////////
-    ion-button {
-        font-size: 12px;
-        --ion-color-primary: none;
-        color: #B9BCBE;
-        margin: 0 auto;
-        text-transform: capitalize !important;
-        text-transform: lowercase;
-    }
-     :hover {
-        font-weight: 700;
-        color: black;
-    }
-    ion-icon {
-        height: 28px;
-        width: 28px;
     }
 }

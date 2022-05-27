@@ -10,7 +10,6 @@ export class AppService {
   currentUser: {
     account: string;
     password: string;
-    name: number;
   } = null;
 
   users: any = [];
@@ -30,4 +29,11 @@ export class AppService {
   }
 
  
+  login() {
+    this.getAllUsers().subscribe((res) => {
+      const user = res.find((a: any) => {
+        return a.account === this.currentUser.account && a.password === this.currentUser.password;
+      });
+    });
+  }
 }
