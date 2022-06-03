@@ -12,8 +12,8 @@ export class OrderTablePage implements OnInit {
   ngOnInit() {
   }
   
-  gotoRating(){
-    this.router.navigateByUrl('/rating');
+  gotoCategory(){
+    this.router.navigateByUrl('/category-food');
   }
 
   gotoCart(){

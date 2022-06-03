@@ -14,4 +14,8 @@ export class CategoryFoodPage implements OnInit {
   gotoContact(){
     this.router.navigateByUrl('/order-food');
   }
+
+  gotoFoodPage(){
+    this.router.navigateByUrl('/order-food');
+  }
 }

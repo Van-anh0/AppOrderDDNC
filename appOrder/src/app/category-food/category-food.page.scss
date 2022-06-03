@@ -1,61 +1,45 @@
-.food-types-container{
-    display: flex; 
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px black;
-    .food-type{
-        width: 182px;
-        height: 182px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        background-image: url('/assets/Chef-Info.png');
-        h2{
-            text-align: center;
-            line-height: 1rem;
-        }
-        p{
-            text-align: center;
-        }
-    }
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ion-header {
+  ion-back-button {
+    --icon-font-size: 18px;
+  }
+
+  ion-title {
+    font-size: 17px;
+  }
 }
-ion-footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  ion-button{
-    text-transform: capitalize !important;
-    text-transform: lowercase;
-    div{
+
+ion-content {
+  font-family: "Bitter", serif;
+  --background: #f0f0f0;
+  ion-searchbar {
+    margin: 10px auto;
+    --border-radius: 17px;
+    width: 90%;
+    text-indent: 0.5rem;
+  }
+  
+  .food-types-container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    .food-type {
+      margin: 7px auto;
+      width: 40%;
+      height: 150px;
+      background: url("/assets/Chef-Info.png") no-repeat;
+      background-size: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-    }
-  }
-  .container-control{
-    font-size: 0.5rem;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    border: 1px solid none;
-    background-color: #E1E1E1;
-    border-radius: 8px;
-    margin: 2% auto;
-    width: 95%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    ion-button{
-      padding-inline-start: 0 !important;
-      padding-inline-end: 0 !important;
-      letter-spacing: 0;
-      :hover {
-        font-weight: 700;
-        color: black;
+      justify-content: flex-end;
+      h2 {
+        text-align: center;
+        line-height: 1rem;
+        color: white;
+      }
+      p {
+        color: white;
+        text-align: center;
       }
     }
   }

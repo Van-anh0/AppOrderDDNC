@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'bottom-tab-page',
     pathMatch: 'full',
   },
   {

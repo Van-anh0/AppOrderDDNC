@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-food',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoFoodPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
 
+  backToOrderFood(){
+    this.router.navigateByUrl('/order-food')
+  }
 }

@@ -5,13 +5,13 @@
   </div>
   <ion-img class="logo" src="assets/icon/logo.png"></ion-img>
 
-  <form [formGroup]="singInForm" id="formLogin" action="" (ngSubmit)="login()" >
-    <ion-input formControlName="account" class="inputAccout" placeholder="Tài khoản"><ion-icon name="person-circle-outline"></ion-icon></ion-input>
-    <ion-input formControlName="password" class="inputPass" type="password" placeholder="Mật khẩu"><ion-icon name="lock-closed"></ion-icon></ion-input>
+  <form id="formLogin" action="" >
+    <ion-input #username class="inputAccout" placeholder="Tài khoản" required><ion-icon name="person-circle-outline"></ion-icon></ion-input>
+    <ion-input #password class="inputPass" type="password" placeholder="Mật khẩu" required><ion-icon name="lock-closed"></ion-icon></ion-input>
     <ion-label class="forgotPassword">Quên mật khẩu?</ion-label>
     <div class="login">
       <ion-label>Đăng nhập</ion-label>
-      <ion-button expand="block" class="btn-Login" (click)="login()" ><ion-icon name="log-in-outline"></ion-icon></ion-button>
+      <ion-button expand="block" class="btn-Login" (click)="authService.SignIn(username.value, password.value)" ><ion-icon name="log-in-outline"></ion-icon></ion-button>
     </div>
     <ion-label class="or">hoặc</ion-label>
     <div class="loginWith">

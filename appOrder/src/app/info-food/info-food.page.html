@@ -1,44 +1,41 @@
-<ion-header [translucent]="true">
- <ion-item lines = "none" color = "warning"> 
-  <ion-buttons slot="start">
-    <ion-back-button color = "light" defaultHref="/"></ion-back-button>
-    <!-- <ion-back-button color = "light" defaulthref="/checklists"></ion-back-button> -->
-  </ion-buttons>
-  <ion-title color = "light">Thông tin món </ion-title>
-    <!-- <ion-cart slot="end">
-      <img src = "assets/icon/cart.png"/>
-    </ion-cart> -->
- </ion-item>
-</ion-header>
+<ion-content [fullscreen]="true" color="light">
+  <div class="header">
+    <ion-img class="img-Food" src="../../assets/images/hamburger.jpg">
+    </ion-img>
+    <ion-button (click)="backToOrderFood()"  class="backToOrderFood">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <ion-button class="like">
+      <ion-icon name="heart-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-<ion-content [fullscreen] = "true" color="light">
-<div class = "main-header">
-
-    <div class = "first">
-      
-       <h1>Hamburger</h1>  
-        <p>Thịt bò, salat, bánh mì</p>
-        <h3>Món âu</h3>
-      
-      
-      <p><img height="15" width="15" src = "assets/icon/star.png"> 4.8 (<span>286</span> Đánh giá)</p>
+  <div class="info-food">
+    <h1>Hamburger</h1>
+    <p>
+      <ion-icon name="star"></ion-icon> 4.8 (<span>286</span>
+      Đánh giá)
+    </p>
+    <p class="category">Món âu</p>
+    <p class="ingredients">
+      <strong>Thành phần:</strong> Thịt bò, salat, bánh mì
+    </p>
+    <p>
+      <strong>Mô tả: </strong> Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Curabitur sit amet enim interdum, hendrerit nulla at,
+      sagittis lorem. Praesent ornare quam ut justo vestibulum sagittis. Etiam
+      nec dictum justo, et maximus diam.
+    </p>
+  </div>
+  <div class="footer">
+    <div class="price">
+      <p><small>Giá:</small></p>
+      <p>75.000đ</p>
     </div>
 
-    
-
-
-<div class = "second">
-  <ion-button color ="warning" size="small" shape="round">Order now</ion-button><br>
-  <ion-button color ="warning" size="small" shape="round">Đánh giá</ion-button>
-</div>
-
-
- 
-</div>
-<div class = "body-main">
-   <h4>Gợi ý</h4>
-</div>
-
-
-
+    <div class="group-button">
+      <ion-button class="order">Đặt ngay</ion-button>
+      <ion-button class="review">Đánh giá</ion-button>
+    </div>
+  </div>
 </ion-content>
