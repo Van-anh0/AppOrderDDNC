@@ -1,9 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar lines="none" color="warning">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/order-table"></ion-back-button>
+      <ion-back-button defaultHref="/bottom-tab-page/tabs/order">
+      </ion-back-button>
     </ion-buttons>
-    <ion-title>My orders</ion-title>
+    <ion-title color="light">Giỏ hàng</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,15 +12,15 @@
   <div class="tableOrders">
     <p>Bàn {{myOrders.table}}</p>
   </div>
-  <div class="item-order" *ngFor="let myorder of myOrders.itemOrder">
-    <ion-row >
-      <ion-img src={{myorder.image}} alt=""></ion-img>
-      <div class="inforFood">
+  <div class="container">
+    <div class="food-card" *ngFor="let myorder of myOrders.itemOrder">
+      <img src="{{myorder.image}}" alt="" />
+      <div class="infor-food">
         <p class="nameFood">{{myorder.nameFood}}</p>
         <p class="categoryFood">{{myorder.category}}</p>
         <p class="quantity">Số lượng: {{myorder.quantity}}</p>
-        <ion-button>Hủy</ion-button>
       </div>
-    </ion-row>
+      <ion-button>Hủy</ion-button>
+    </div>
   </div>
 </ion-content>

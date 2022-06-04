@@ -1,67 +1,45 @@
-* {
-    font: Inria Sans;
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ion-header {
+  ion-back-button {
+    --icon-font-size: 18px;
+  }
+
+  ion-title {
+    font-size: 15px;
+  }
+
+  ion-icon {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    right: 5%;
+  }
 }
 
-.toolbar {
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    background-color: #FFA724;
-    ion-back-button {
-        float: left;
-        color: white;
-    }
-    label {
-        float: left;
-        font-size: 20px;
-        margin-top: 12px;
-        color: white;
-    }
-}
-
-.toolbar-end {
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    background-color: #FFA724;
-    position: fixed;
-    right: 0;
-    padding: 0.5rem;
-    margin-right: 10px;
-    ion-icon {
-        height: 30px;
-        width: 30px;
-        color: white;
-    }
-    img {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-.container-button {
+ion-content {
+  font-family: "Bitter", serif;
+  .container-button {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    --ion-color-primary: #F6F6F6;
-    border-radius: 15px;
+    margin-top: 0 auto;
+    padding: 10px;
+    --ion-color-primary: #f6f6f6;
     ion-button {
-        color: black;
-        border: 1px solid none;
-        border-radius: 180px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-top: 15px;
-        font-weight: 550;
-        text-transform: none;
-        height: 40px;
-        --border-radius: 15px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      color: black;
+      border-radius: 10px;
+      font-weight: 550;
+      text-transform: none;
+      height: 40px;
+      --border-radius: 15px;
     }
-     :hover {
-        --ion-color-primary: #FFA724;
-        --transition: 0.8s;
+    :hover {
+      --ion-color-primary: #ffa724;
+      --transition: 0.8s;
     }
-}
+  }
 
-.lb-noti {
+  .lb-noti {
     margin: 24px 0px 0px 24px;
+  }
 }
