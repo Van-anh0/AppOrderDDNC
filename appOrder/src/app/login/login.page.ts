@@ -8,14 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  constructor(private router: Router, public authService: AuthService) {}
 
-  constructor(private router: Router, 
-    public authService: AuthService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  gotoRegisterPage() {
+    this.router.navigateByUrl('/register');
   }
 
-  gotoRegisterPage(){
-    this.router.navigateByUrl('/register')
+  login(email, password) {
+    this.authService
+      .signin(email.value, password.value)
+      .then((res) => {
+        this.router.navigateByUrl('/bottom-tab-page');
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
   }
 }

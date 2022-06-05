@@ -28,11 +28,7 @@
     ></ion-input>
     <div class="register">
       <ion-label>Đăng ký</ion-label>
-      <ion-button
-        expand="block"
-        class="btn-Register"
-        (click)="authService.SignUp(username.value, password.value)"
-        ><ion-icon name="create-outline"></ion-icon
+      <ion-button expand="block" class="btn-Register" (click)="signUp(username, password)" ><ion-icon name="create-outline"></ion-icon
       ></ion-button>
     </div>
     <ion-label class="login"

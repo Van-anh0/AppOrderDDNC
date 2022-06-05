@@ -15,4 +15,18 @@ export class RegisterPage implements OnInit {
   gotoLoginPage() {
     this.router.navigateByUrl('/login');
   }
+
+  signUp(email, password) {
+    this.authService
+      .register(email.value, password.value)
+      .then((res) => {
+        alert('success');
+        this.router.navigateByUrl('/login');
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
+
+  
 }

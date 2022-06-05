@@ -31,6 +31,14 @@ export class AuthService {
     });
   }
 
+  signin(email, password) {
+    return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  register(email, password) {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+  }
+
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
@@ -40,44 +48,14 @@ export class AuthService {
       email: user.email,
       name: user.name,
       imageURL: user.imageURL,
-      emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {
       merge: true,
     });
   }
 
-  SignIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['bottom-tab-page']);
-        });
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-  }
-
-  SendVerificationMail() {
-    return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      });
-  }
-
-  SignUp(email: string, password: string) {
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SendVerificationMail();
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null ? true : false;
   }
 }
