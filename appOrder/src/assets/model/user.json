@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "account": "thiensoncva01@gmail.com",
+        "password": "123456",
+        "name": "thien son"
+    },
+    {
+        "id": "2",
+        "account": "thiensoncva02@gmail.com",
+        "password": "123456",
+        "name": "thien son 2"
+    }
+]    

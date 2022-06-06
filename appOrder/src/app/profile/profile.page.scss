@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ion-header {
+  ion-back-button {
+    --icon-font-size: 18px;
+  }
+
+  ion-title {
+    font-size: 15px;
+  }
+
+  ion-icon {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    right: 5%;
+  }
+}
+
+ion-content {
+    font-family: "Bitter", serif;
+}
+
+//////////// Toolbar ////////////////
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background-color: #FFA724;
+    /////////////
+    ion-back-button {
+        float: left;
+        color: white;
+    }
+    ////////////
+    label {
+        float: left;
+        font-size: 20px;
+        margin-top: 12px;
+        color: white;
+    }
+}
+
+.toolbar-end {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background-color: #FFA724;
+    position: fixed;
+    right: 0;
+    padding: 0.5rem;
+    margin-right: 10px;
+    ion-icon {
+        height: 30px;
+        width: 30px;
+        color: white;
+    }
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+//////////// User ////////////////
+.container-user {
+    height: 120px;
+    border: 1px solid none;
+    border-radius: 10px;
+    background-color: #F3F3F3;
+    display: flex;
+    padding: 1rem;
+    strong {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    label {
+        margin-left: 10px;
+        color: #A8A6A6;
+    }
+    ion-icon {
+        border-bottom: 1px solid black;
+    }
+    ion-button {
+        color: black;
+        float: right;
+    }
+    div {
+        margin-top: 30px;
+    }
+}
+
+//////////// Button ////////////////
+.container-button {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #F1F1F1;
+    --ion-color-primary: #F6F6F6;
+    border-radius: 15px;
+    /////////////////
+    ion-button {
+        color: black;
+        border: 1px solid none;
+        border-radius: 180px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-top: 5px;
+        font-weight: 550;
+        text-transform: none;
+        height: 40px;
+        --border-radius: 180px;
+    }
+     :hover {
+        --ion-color-primary: #FFA724;
+        --transition: 0.8s;
+    }
+    ion-icon {
+        height: 25px;
+        width: 25px;
+        margin: 0 7px 0 7px;
+    }
+}
+
+//////////// Control ////////////////
+.container-control {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    border: 1px solid none;
+    background-color: #E1E1E1;
+    border-radius: 8px;
+    margin: 2% auto;
+    font-family: 'Roboto';
+    width: 95%;
+    //padding: 1rem;
+    ///////////////////////////
+    ion-button {
+        font-size: 12px;
+        --ion-color-primary: none;
+        color: #B9BCBE;
+        margin: 0 auto;
+        text-transform: capitalize !important;
+        text-transform: lowercase;
+    }
+     :hover {
+        font-weight: 700;
+        color: black;
+    }
+    ion-icon {
+        height: 28px;
+        width: 28px;
+    }
+}
