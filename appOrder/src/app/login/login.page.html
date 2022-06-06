@@ -5,12 +5,12 @@
   </div>
   <ion-img class="logo" src="assets/icon/logo.png"></ion-img>
 
-  <form id="formLogin" action="">
-    <ion-input #username class="inputAccout" placeholder="Tài khoản" required
+  <form id="formLogin" action="" [formGroup]="loginForm" (ngSubmit)="login()" >
+    <ion-input formControlName="email" class="inputAccout" placeholder="Tài khoản" required
       ><ion-icon name="person-circle-outline"></ion-icon
     ></ion-input>
     <ion-input
-      #password
+      formControlName="password"
       class="inputPass"
       type="password"
       placeholder="Mật khẩu"
@@ -20,7 +20,7 @@
     <ion-label class="forgotPassword">Quên mật khẩu?</ion-label>
     <div class="login">
       <ion-label>Đăng nhập</ion-label>
-      <ion-button expand="block" class="btn-Login" (click)="login(username, password)" 
+      <ion-button type="submit" expand="block" class="btn-Login"
         ><ion-icon name="log-in-outline"></ion-icon
       ></ion-button>
     </div>

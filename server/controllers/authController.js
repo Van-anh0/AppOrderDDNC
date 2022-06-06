@@ -39,7 +39,7 @@ const authCtrl = {
   login: async (req, res, next) => {
     try {
       const { username, password } = req.body;
-      const loginUser = await User.findOne({ username: username });
+      const loginUser = await User.findOne({ email: username });
       if (!loginUser)
         return res.status(400).json({ msg: "tai khoan khong ton tai" });
       if (password !== loginUser.password)
