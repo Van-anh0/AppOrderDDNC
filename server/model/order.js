@@ -5,18 +5,19 @@ const orderSchema = mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: 'User'
         },
-        food_id:[{
-            type: mongoose.Types.ObjectId,
-            ref: 'Food'
+        foods:[{
+            food_id:{
+                type: mongoose.Types.ObjectId,
+                ref: 'Food'
+            },
+            amount:{
+                type: Number,
+                default: 0
+            }
         }],
         table_id:{
             type: mongoose.Types.ObjectId,
             ref: 'Table'
-        },
-        status:{
-            type: String,
-            default: 'ordering',
-            enum: ['ordering','pendding', 'ready', 'success', 'cancel']
         },
         note: String
     },

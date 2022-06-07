@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const tableSchema = mongoose.Schema(
     {
-        _id: {
-            type: String,
+        id:{
+            type: Number,
             required: true
         },
         status: {

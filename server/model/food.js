@@ -19,18 +19,14 @@ const foodSchema = mongoose.Schema(
       type: String,
       default: "",
     },
-    rating: {
-      rate: {
-        type: Number,
-        min: 0,
-        max: 5,
-        default: 0,
-      },
-      count: {
-        type: Number,
-        default: 0,
-      },
+    rate: {
+      type: Number,
+      default: 0
     },
+    count: {
+      type: Number,
+      default: 0
+    }
   },
   { timestamps: true }
 );
