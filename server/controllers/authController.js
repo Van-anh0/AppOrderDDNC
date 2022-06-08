@@ -50,25 +50,11 @@ const authCtrl = {
       return res.status(500).json({ msg: error.message });
     }
   },
-  generateAccessToken: async (req, res) => {
-    try {
-      const rf_token = req.cookies.refreshtoken;
-      if (!rf_token) return res.status(400).json({ msg: "vui long dag nhap" });
-      jwt.verify(rf_token, process.env.REFRESH_TOKEN, async (err, result) => {
-        if (err) return res.status(400).json({ msg: "vui long dang nhap" });
-        const user = await User.findById(result.id).select("-password");
-        if (!user)
-          return res.status(400).json({ mgs: "nguoi dung khong ton tai" });
-        const access_token = createAccessToken({ id: user._id });
-        return res.json({
-          access_token,
-          user,
-        });
-      });
-    } catch (err) {
-      return res.status(500).json({ msg: err.message });
-    }
-  },
+  getUser: async (req, res) =>{
+    try{
+      return res.json({user: req.current_user._doc});
+    } catch{}
+  } 
 };
 const createAccessToken = (payload) => {
   return jwt.sign(payload, process.env.ACCESS_TOKEN, { expiresIn: "1d" });

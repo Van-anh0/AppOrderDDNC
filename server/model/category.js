@@ -9,6 +9,10 @@ const categorySchema = mongoose.Schema(
         image:{
             type: String, 
             default: ''
+        },
+        foods:{
+            type: Number,
+            defualt: 0
         }
     },
     {timestamps: true}

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const foodSchema = mongoose.Schema(
   {
-    title: {
+    name: {
       type: String,
       required: true,
     },
@@ -9,8 +9,7 @@ const foodSchema = mongoose.Schema(
       type: String,
     },
     category: {
-      type: mongoose.Types.ObjectId,
-      ref: "Category",
+      type: String
     },
     price: {
       type: Number,

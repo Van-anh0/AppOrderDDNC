@@ -15,9 +15,8 @@ const orderSchema = mongoose.Schema(
                 default: 0
             }
         }],
-        table_id:{
-            type: mongoose.Types.ObjectId,
-            ref: 'Table'
+        table:{
+            type: String
         },
         note: String
     },
