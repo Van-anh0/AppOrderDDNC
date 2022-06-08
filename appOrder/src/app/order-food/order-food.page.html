@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar lines="none" color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/category-food"> </ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Món ăn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar></ion-searchbar>
+  <div class="container">
+    <div class="food-card" *ngFor="let food of foods" [routerLink]="[food.id]">
+      <img src="{{food.image}}" />
+      <div class="info-food">
+        <h2>{{food.name}}</h2>
+        <p>{{food.amount}}đ</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

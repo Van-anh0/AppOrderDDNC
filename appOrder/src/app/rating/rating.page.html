@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-item lines = "none" color = "warning"> 
+    <ion-buttons slot="start">
+      <ion-back-button color = "light" defaultHref="/"></ion-back-button>
+      <!-- <ion-back-button color = "light" defaulthref="/checklists"></ion-back-button> -->
+    </ion-buttons>
+    <ion-title color = "light">Đánh giá </ion-title>
+  </ion-item>
+</ion-header>
+
+
+<ion-content> 
+<div class="container">
+  <h3 style="font-size: 20px">Bạn thấy sản phẩm của chúng tôi như thế nào? Hãy cho chúng tôi biết</h3>
+
+  <div class="rating">
+    <ul class="rating-list" *ngFor="let star of stars; let i= index">
+      <li
+        (click)="countStar(star)"
+        id="{{'starId'+i}}"
+        [ngClass]="{'selected': (star <= selectedValue)}"
+        (mouseover)="addClass(star)"
+        (mouseout)="removeClass(star)"
+      >
+        ★
+      </li>
+    </ul>
+  </div>
+
+  <div class="container-lb">
+    <label class="lb-rating">Viết đánh giá</label>
+  </div>
+  
+  <div>
+    <ion-textarea class="writeReview" [placeholder]="placeholder">
+    </ion-textarea>
+  </div>
+  <ion-button class="btn-send">Gửi</ion-button>
+</div>
+</ion-content>
