@@ -1,55 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import {AppService} from '../services/app.service';
-import {FormGroup, FormBuilder} from '@angular/forms';
+import { AppService } from '../services/app.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Category, DataService } from 'src/app/services/data.service';
+import { StorageService } from '../services/storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
-  public singInForm !: FormGroup;
-  user:any = []
-  constructor(private router: Router, 
+  public singInForm!: FormGroup;
+  user: any = [];
+  constructor(
+    private router: Router,
     public loadingController: LoadingController,
     private appService: AppService,
     private formBuilder: FormBuilder,
-    private dataService: DataService) { }
+    private dataService: DataService,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit() {
     this.singInForm = this.formBuilder.group({
       account: [''],
-      password: ['']
-    })
+      password: [''],
+    });
   }
 
-  gotoRegisterPage(){
-    this.router.navigateByUrl('/register')
+  gotoRegisterPage() {
+    this.router.navigateByUrl('/register');
   }
 
-  gotoHome(){
-    this.router.navigateByUrl('/bottom-tab')
+  gotoHome() {
+    this.router.navigateByUrl('/bottom-tab');
   }
-  
-  login(){
+
+  login() {
     console.log('Đã vào login');
-    this.dataService.getUser().subscribe(result => {
-      const users = result.find((a: any) =>{
-        return a.account === this.singInForm.value.account && a.password === this.singInForm.value.password
+    this.dataService.getUser().subscribe((result) => {
+      const users = result.find((a: any) => {
+        return (
+          a.account === this.singInForm.value.account &&
+          a.password === this.singInForm.value.password
+        );
       });
-      if(users){
+      if (users) {
+        this.user = users;
+        this.storageService.store('users',this.user);
         this.router.navigateByUrl('/bottom-tab');
-      }
-      else{
+      } else {
         alert('error');
       }
-    })
+    });
   }
 
-  getCurrentUser(){
+  getCurrentUser() {
     return this.singInForm.value;
   }
 }
