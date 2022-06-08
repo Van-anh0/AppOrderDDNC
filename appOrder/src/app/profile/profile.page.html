@@ -1,39 +1,19 @@
-<ion-header>
-    <div class="toolbar">
-        <!-- <ion-back-button defaultHref="/"></ion-back-button> -->
-        <label> Setting </label>
-        <div class="toolbar-end">
-            <ion-icon name="notifications-sharp" style="margin-top: 2px;"></ion-icon>
-            <ion-icon name="bag-handle-outline" style="margin: 0 7px 0 7px;"></ion-icon>
-        </div>
-    </div>
-</ion-header>
-
-<ion-content>
-    <div class="container-user">
-        <img src="/assets/icon/favicon.png" />
-        <ion-button fill="clear">
-            <ion-icon name="pencil-sharp"></ion-icon>
-        </ion-button>
-        <div>
-            <strong>Billy</strong>
-            <br>
-            <label>billy@gmail.com</label>
-        </div>
-    </div>
-
+<ion-header [translucent]="true">
+    <ion-toolbar color="warning">
+      <ion-buttons slot="end">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-icon name="cart" slot="end"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <h2 class="lb-noti">Settings</h2>
     <div class="container-button">
-        <ion-button (click)="gotoMyOrder()">
-            <ion-icon name="bag-handle-outline"></ion-icon>
-            Đơn đặt món của tôi
-        </ion-button>
-        <ion-button>
-            <ion-icon name="key-outline"></ion-icon>
-            Thay đổi mật khẩu</ion-button>
-        <ion-button>
-            <ion-icon name="document-lock-outline"></ion-icon>
-            Chính sách và điều khoản</ion-button>
-
-        <ion-button class="ctn-btn" style="margin-top: 50px">Đăng xuất</ion-button>
+      <ion-button class="ctn-btn">Thông báo ứng dụng</ion-button>
+      <ion-button class="ctn-btn">Thông báo Email & SMS</ion-button>
+      <ion-button class="ctn-btn">Thông báo đặt trước</ion-button>
+      <ion-button class="ctn-btn">Đăng xuất</ion-button>
     </div>
-</ion-content>
+  </ion-content>
+  
