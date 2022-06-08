@@ -16,11 +16,11 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="6" *ngFor="let order of orderFoods" [routerLink]="[order.id]">
+      <ion-col size="6" *ngFor="let food of foods" [routerLink]="[food.id]">
           <div class="col_div">
-            <ion-img src = {{order.image}}></ion-img>
-            <p class="title">{{order.name}}</p>
-            <p class="price">{{order.amount}}</p>
+            <ion-img src = {{food.image}}></ion-img>
+            <p class="title">{{food.name}}</p>
+            <p class="price">{{food.amount}} vnđ</p>
           </div>
       </ion-col>
     </ion-row>

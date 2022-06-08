@@ -81,6 +81,15 @@ const routes: Routes = [
     path: 'bottom-tab',
     loadChildren: () => import('./bottom-tab/bottom-tab.module').then( m => m.BottomTabPageModule)
   },
+  {
+    path: 'modal',
+    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'house',
+    loadChildren: () => import('./pages/house/house.module').then( m => m.HousePageModule)
+  },
+
 
 ];
 

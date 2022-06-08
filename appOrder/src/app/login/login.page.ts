@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import {AppService} from '../services/app.service';
-import {FormGroup, FormBuilder} from '@angular/forms'
+import {FormGroup, FormBuilder} from '@angular/forms';
+import { Category, DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -15,7 +16,8 @@ export class LoginPage implements OnInit {
   constructor(private router: Router, 
     public loadingController: LoadingController,
     private appService: AppService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private dataService: DataService) { }
 
   ngOnInit() {
     this.singInForm = this.formBuilder.group({
@@ -34,7 +36,7 @@ export class LoginPage implements OnInit {
   
   login(){
     console.log('Đã vào login');
-    this.appService.getAllUsers().subscribe(result => {
+    this.dataService.getUser().subscribe(result => {
       const users = result.find((a: any) =>{
         return a.account === this.singInForm.value.account && a.password === this.singInForm.value.password
       });
