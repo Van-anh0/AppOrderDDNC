@@ -16,7 +16,7 @@ export interface Category {
 export interface Table {
   id?: string;
   nameTable: string;
-  status: string;
+  status: boolean;
 }
 
 export interface FoodInfo {

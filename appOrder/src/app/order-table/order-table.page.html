@@ -9,14 +9,14 @@
   <div class="table-container">
     <ion-col size="6" *ngFor="let table of tables" [routerLink]="[table.id]">
       <div (click)="gotoCategory()">
-        <div *ngIf="table.status == 'Trống'">
+        <div *ngIf="table.status == true">
           <div class="table table-fill">
             <div class="table-rec"></div>
             <ion-icon src="/assets/icon/ring.svg"></ion-icon>
             <p>{{table.nameTable}}</p>
           </div>
         </div>
-        <div *ngIf="table.status == 'Có người'">
+        <div *ngIf="table.status == false">
           <div class="table">
             <div class="table-rec"></div>
             <ion-icon src="/assets/icon/ring.svg"></ion-icon>
