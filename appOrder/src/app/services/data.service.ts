@@ -7,10 +7,12 @@ import {
   docData,
   addDoc,
   deleteDoc,
+  getDocs,
   updateDoc,
   where,
   query,
 } from '@angular/fire/firestore';
+import { DocumentSnapshot, getDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 
 export interface Note {
@@ -81,17 +83,17 @@ export class DataService {
     const UserRef = collection(this.firestore, 'user');
     return collectionData(UserRef, { idField: 'id' }) as Observable<User[]>;
   }
+  async getUserById(id){
+    const noteDocRef = doc(this.firestore, `user/${id}`);
+    return docData(noteDocRef, { idField: 'id' }) as Observable<User>;
+  }
 
-  async checkAccount(account: string) {
-    const UserRef = await query(
-      collection(this.firestore, 'user'),
-      where('account', '==', account)
-    );
-    if (UserRef) {
-      console.log(UserRef);
+  async checkAccountExists(account: string) {
+    const userRef = await getDocs(
+      query( collection(this.firestore, 'user'),where('account', '==', account)));
+    if (userRef.empty) {
       return false;
     } else {
-      console.log(UserRef);
       return true;
     }
   }

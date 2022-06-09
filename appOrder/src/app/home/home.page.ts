@@ -15,15 +15,14 @@ export class HomePage implements OnInit {
   constructor(
     private router: Router,
     private storageService: StorageService,
-    private appService: AppService,
     private dataService: DataService,
     private cd: ChangeDetectorRef
   ) {
-    if (this.storageService.get('user') == null) {
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    if ( currentUser == null) {
       this.router.navigateByUrl('/login');
     } else {
       this.router.navigateByUrl('/bottom-tab');
-      console.log('exists');
     }
   }
   gotoCategory() {
