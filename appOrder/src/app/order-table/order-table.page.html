@@ -8,7 +8,7 @@
 <ion-content>
   <div class="table-container">
     <ion-col size="6" *ngFor="let table of tables" [routerLink]="[table.id]">
-      <div (click)="gotoCategory()">
+      <div (click)="goToCate()">
         <div *ngIf="table.status == true">
           <div class="table table-fill">
             <div class="table-rec"></div>
@@ -26,83 +26,5 @@
       </div>
     </ion-col>
   </div>
-  <!-- 
-  <div class="table-container">
-    <div class="table table-fill" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 1</p>
-      </div>
-    </div>
-    <div class="table" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 2</p>
-      </div>
-    </div>
-    <div class="table" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 3</p>
-      </div>
-    </div>
-    <div class="table" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 4</p>
-      </div>
-    </div>
-    <div class="table table-fill" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 5</p>
-      </div>
-    </div>
-    <div class="table" (click)="gotoCategory()">
-      <div class="table-rec"></div>
-      <div>
-        <ion-icon src="/assets/icon/ring.svg"></ion-icon>
-        <p>Bàn 6</p>
-      </div>
-    </div>
-  </div> -->
-  <!-- <ion-footer>
-   <div class="container-control">
-        <ion-button fill="clear" class="control-button">
-          <div>
-          <ion-icon name="home-outline"></ion-icon>
-          <span>Home</span>
-          </div>
-        </ion-button>
-        <ion-button fill="clear">
-          <div>
-            <ion-icon name="chatbubble-ellipses"></ion-icon>
-           <span>Message</span> 
-          </div>
-        </ion-button>
-        <ion-button fill="clear">
-          <div>
-            <ion-icon name="newspaper-outline"></ion-icon>
-           <span>Order</span> 
-          </div>
-        </ion-button>
-        <ion-button fill="clear">
-          <div>
-            <ion-icon name="call-outline"></ion-icon>
-            <span>Contact</span>
-          </div>
-        </ion-button>
-        <ion-button fill="clear">
-          <div>
-            <ion-icon name="settings"></ion-icon>
-           <span>Settings</span> 
-          </div>
-        </ion-button>
-    </div>
-  </ion-footer> -->
+ 
 </ion-content>
