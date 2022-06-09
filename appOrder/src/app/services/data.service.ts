@@ -68,6 +68,12 @@ export class DataService {
     return collectionData(UserRef, { idField: 'id'}) as Observable<User[]>;
   }
   
+  getFoodById(id): Observable<FoodInfo> {
+    const noteDocRef = doc(this.firestore, `foodInfo/${id}`);
+    return docData(noteDocRef, { idField: 'id' }) as Observable<FoodInfo>;
+  }
+
+
   getNoteById(id): Observable<Note> {
     const noteDocRef = doc(this.firestore, `notes/${id}`);
     return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
