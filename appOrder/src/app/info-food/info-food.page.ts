@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AppService } from '../services/app.service';
+import { FoodInfo } from '../services/data.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-info-food',
@@ -9,35 +12,32 @@ import { AppService } from '../services/app.service';
   styleUrls: ['./info-food.page.scss'],
 })
 export class InfoFoodPage implements OnInit {
+  foodDetails: FoodInfo;
 
-  orderFoods:any = [];
-  //orderFood = 1;
-  constructor(private routerAc: ActivatedRoute, private appService:AppService, private router:Router) { }
+  constructor(
+    private routerAc: ActivatedRoute,
+    private appService: AppService,
+    private router: Router,
+    private dataService: DataService
+  ) {}
 
   ngOnInit() {
+    this.load();
+  }
+
+  load() {
     const id = this.routerAc.snapshot.paramMap.get('id');
+    this.dataService.getFoodById(id).subscribe((res: FoodInfo) => {
+      this.foodDetails = res;
+    });
     console.log(id);
-    this.getData();
-    
   }
 
   backToOrderFood() {
-    this.router.navigateByUrl('/order-food')
+    this.router.navigateByUrl('/order-food');
   }
 
-  getData(){
-    this.appService.getAllOrderFoods().subscribe(orderFoods=>{
-      this.orderFoods = orderFoods;
-    })
+  review() {
+    this.router.navigateByUrl('/rating');
   }
-
-  review(){
-    this.router.navigateByUrl('/rating')
-  }
-
- 
-
-  
-  
- 
 }

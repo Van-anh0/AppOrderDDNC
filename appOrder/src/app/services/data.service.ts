@@ -33,6 +33,7 @@ export interface Table {
 export interface FoodInfo {
   id?: string;
   nameCateId: string;
+  nameCate: string;
   image: string;
   name: string;
   amount: number;
@@ -109,6 +110,11 @@ export class DataService {
   addNote(note: Note) {
     const notesRef = collection(this.firestore, 'notes');
     return addDoc(notesRef, note);
+  }
+
+  getFoodById(id): Observable<FoodInfo> {
+    const foodDetailsRef = doc(this.firestore, `foodInfo/${id}`);
+    return docData(foodDetailsRef, { idField: 'id' }) as Observable<FoodInfo>;
   }
 
   deleteNote(note: Note) {

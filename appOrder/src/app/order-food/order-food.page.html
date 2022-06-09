@@ -8,9 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [formControl]="searchField" debounce="100"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchField" debounce="100"></ion-searchbar>
   <div class="container">
-    <div class="food-card" *ngFor="let food of foods" [routerLink]="[food.id]">
+    <div
+      class="food-card"
+      *ngFor="let food of foods | filter:searchField"
+      [routerLink]="[food.id]"
+    >
       <img src="{{food.image}}" />
       <div class="info-food">
         <h2>{{food.name}}</h2>

@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { OrderFoodPageRoutingModule } from './order-food-routing.module';
 import { OrderFoodPage } from './order-food.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicModule,
     OrderFoodPageRoutingModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   declarations: [OrderFoodPage],
 })

@@ -8,25 +8,12 @@ const routes: Routes = [
       import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
-    path: 'order-food/:id',
-    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
-  },
-
-  {
-    path: 'home/:id',
-    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
-  },
-
- 
-
-  {
     path: 'order-food',
     loadChildren: () =>
       import('./order-food/order-food.module').then(
         (m) => m.OrderFoodPageModule
       ),
   },
-
   {
     path: 'info-food',
     loadChildren: () =>
@@ -66,7 +53,8 @@ const routes: Routes = [
   },
   {
     path: 'setting',
-    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+    loadChildren: () =>
+      import('./setting/setting.module').then((m) => m.SettingPageModule),
   },
 
   {
@@ -76,21 +64,24 @@ const routes: Routes = [
         (m) => m.CategoryFoodPageModule
       ),
   },
-  
+
   {
     path: 'bottom-tab',
-    loadChildren: () => import('./bottom-tab/bottom-tab.module').then( m => m.BottomTabPageModule)
+    loadChildren: () =>
+      import('./bottom-tab/bottom-tab.module').then(
+        (m) => m.BottomTabPageModule
+      ),
   },
   {
     path: 'modal',
-    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
+    loadChildren: () =>
+      import('./pages/modal/modal.module').then((m) => m.ModalPageModule),
   },
   {
     path: 'house',
-    loadChildren: () => import('./pages/house/house.module').then( m => m.HousePageModule)
+    loadChildren: () =>
+      import('./pages/house/house.module').then((m) => m.HousePageModule),
   },
-
-
 ];
 
 @NgModule({
