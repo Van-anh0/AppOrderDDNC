@@ -11,6 +11,7 @@ export class StorageService {
   async store(storageKey: string, value: any) {
     await this.storage.set(storageKey, value);
     console.log('sucess');
+    console.log(value);
   }
 
   async get(storageKey: string) {
