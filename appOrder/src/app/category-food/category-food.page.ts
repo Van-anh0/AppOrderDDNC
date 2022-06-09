@@ -23,12 +23,6 @@ export class CategoryFoodPage implements OnInit {
 
   ngOnInit() {
   }
-  // async getData(){
-  //   this.ll=(await fetch('https://fakestoreapi.com/products/categories')
-  //           .then(res=>res.json())
-  //           .then(json=> json));
-  //   console.log(this.ll);
-  // }
   gotoOrderFood(){
     this.router.navigateByUrl('/order-food');
   }

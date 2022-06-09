@@ -38,7 +38,6 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    console.log('Đã vào login');
     this.dataService.getUser().subscribe((result) => {
       const users = result.find((a: any) => {
         return (
@@ -49,7 +48,6 @@ export class LoginPage implements OnInit {
       if (users) {
         this.user = users;
         this.storageService.store('users', this.user);
-        this.router.navigateByUrl('/bottom-tab');
       } else {
         alert('error');
       }

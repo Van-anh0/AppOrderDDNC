@@ -14,6 +14,7 @@ import { startWith } from 'rxjs/operators';
 export class OrderFoodPage implements OnInit {
   public foods: FoodInfo[] = [];
   public searchField: FormControl;
+  public filterFoods: FoodInfo[] = [];
   constructor(
     private dataService: DataService,
     private cd: ChangeDetectorRef,
@@ -27,17 +28,5 @@ export class OrderFoodPage implements OnInit {
       this.cd.detectChanges();
     });
   }
-  ngOnInit() {
-    //  this.getData();
-  }
-
-  async searchProduct() {
-    const searchItem = this.searchField.valueChanges.pipe(
-      startWith(this.searchField.value)
-    );
-
-    const foodList = this.dataService.getFoodsInfo().subscribe((res) => {
-      this.foods = res;
-    });
-  }
+  ngOnInit() {}
 }
