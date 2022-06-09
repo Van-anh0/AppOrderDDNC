@@ -14,9 +14,7 @@ export class HomePage implements OnInit {
   public foods: FoodInfo[] = [];
   constructor(
     private router: Router,
-    private storageService: StorageService,
     private dataService: DataService,
-    private cd: ChangeDetectorRef
   ) {
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if ( currentUser == null) {
@@ -31,8 +29,8 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getFoodsInfo().subscribe((res) => {
+      res.sort((a, b) => b.review-a.review);
       this.foods = res;
-      this.cd.detectChanges();
     });
   }
 }

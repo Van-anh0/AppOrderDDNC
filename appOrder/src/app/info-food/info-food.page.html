@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true" color="light">
   <div class="header">
-    <ion-img class="img-Food" src="../../assets/images/hamburger.jpg">
+    <ion-img class="img-Food" [src]="this.foodData.image">
     </ion-img>
     <ion-button class="backToOrderFood" (click)="backToOrderFood()" >
       <ion-icon name="chevron-back-outline"></ion-icon>
@@ -10,27 +10,24 @@
     </ion-button>
   </div>
   <div class="info-food">
-    <h1>Hamburger</h1>
+    <h1>{{this.foodData.name}}</h1>
     <p>
-      <ion-icon name="star"></ion-icon> 4.8 (<span>286</span>
+      <ion-icon name="star"></ion-icon> {{this.foodData.review}} (<span>286</span>
       Đánh giá)
     </p>
-    <p class="category">Món âu</p>
+    <p class="category">{{this.foodData.nameCate}}</p>
     <p>
-      Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit. Curabitur sit amet enim interdum, hendrerit nulla at,
-      sagittis lorem. Praesent ornare quam ut justo vestibulum sagittis. Etiam
-      nec dictum justo, et maximus diam.
+      {{this.foodData.detail}}
     </p>
   </div>
   <div class="footer">
     <div class="price">
       <p><small>Giá:</small></p>
-      <p>75.000đ</p>
+      <p>{{this.foodData.amount}}</p>
     </div>
 
     <div class="group-button">
-      <ion-button class="order">Đặt ngay</ion-button>
+      <ion-button class="order" (click)="this.handleOrder()">Đặt ngay</ion-button>
       <ion-button class="review">Đánh giá</ion-button>
     </div>
   </div>

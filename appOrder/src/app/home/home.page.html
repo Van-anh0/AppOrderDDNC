@@ -13,7 +13,7 @@
   <div class="container">
     <div class="food-card" 
       *ngFor="let item of foods;let i = index;"
-      [routerLink]="[item.id]"
+      [routerLink]="['/order-food/',item.id]"
     >
       <img src="{{item.image}}" />
       <div class="info-food">

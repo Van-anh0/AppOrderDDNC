@@ -10,17 +10,17 @@
 
 <ion-content>
   <div class="tableOrders">
-    <p>Bàn {{myOrders.table}}</p>
+    <p>{{this.tableId}}</p>
   </div>
   <div class="container">
-    <div class="food-card" *ngFor="let myorder of myOrders.itemOrder">
-      <img src="{{myorder.image}}" alt="" />
+    <div class="food-card" *ngFor="let item of this.orderFull">
+      <img src="{{item.image}}" alt="" />
       <div class="infor-food">
-        <p class="nameFood">{{myorder.nameFood}}</p>
-        <p class="categoryFood">{{myorder.category}}</p>
-        <p class="quantity">Số lượng: {{myorder.quantity}}</p>
+        <p class="nameFood">{{item.name}}</p>
+        <p class="categoryFood">{{item.category}}</p>
+        <p class="quantity">Số lượng: {{item.quantity}}</p>
       </div>
-      <ion-button>Hủy</ion-button>
+      <ion-button (click)="this.handleRemove(item.id)">Hủy</ion-button>
     </div>
   </div>
 </ion-content>
