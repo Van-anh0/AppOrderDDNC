@@ -32,11 +32,7 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    const createUser = this.dataService.addUser(this.registerForm.value);
-    if (
-      !this.dataService.checkAccount(this.registerForm.value.account) &&
-      createUser == null
-    ) {
+    if (this.dataService.checkAccount(this.registerForm.value.account)) {
       let toast = this.toastCtrl.create({
         message: 'Đăng ký không thành công',
         duration: 5000,
@@ -44,13 +40,14 @@ export class RegisterPage implements OnInit {
       });
       (await toast).present();
     } else {
+      this.dataService.addUser(this.registerForm.value);
       let toast = this.toastCtrl.create({
         message: 'Đăng ký thành công',
         duration: 5000,
         color: 'dark',
       });
       (await toast).present();
+      this.router.navigateByUrl('/bottom-tab');
     }
-    return await createUser;
   }
 }

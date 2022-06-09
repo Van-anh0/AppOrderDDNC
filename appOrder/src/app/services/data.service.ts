@@ -88,8 +88,10 @@ export class DataService {
       where('account', '==', account)
     );
     if (UserRef) {
+      console.log(UserRef);
       return false;
     } else {
+      console.log(UserRef);
       return true;
     }
   }
