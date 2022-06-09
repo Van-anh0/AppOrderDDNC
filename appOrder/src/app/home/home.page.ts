@@ -12,6 +12,7 @@ import { DataService } from '../services/data.service';
 })
 export class HomePage implements OnInit {
   public foods: FoodInfo[] = [];
+  public searchField: string;
   constructor(
     private router: Router,
     private storageService: StorageService,

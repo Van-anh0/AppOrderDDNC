@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchField" debounce="100"></ion-searchbar>
   <h1>Món ăn phổ biến</h1>
   <div class="container">
     <div class="food-card" 
-      *ngFor="let item of foods;let i = index;"
+      *ngFor="let item of foods | filter:searchField;let i = index; "
       [routerLink]="[item.id]"
     >
       <img src="{{item.image}}" />

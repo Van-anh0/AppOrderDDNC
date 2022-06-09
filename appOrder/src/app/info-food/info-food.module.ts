@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { InfoFoodPageRoutingModule } from './info-food-routing.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InfoFoodPage } from './info-food.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { InfoFoodPage } from './info-food.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InfoFoodPageRoutingModule
+    InfoFoodPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [InfoFoodPage]
 })

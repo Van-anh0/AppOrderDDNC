@@ -13,7 +13,7 @@ import { DataService } from '../services/data.service';
 })
 export class InfoFoodPage implements OnInit {
   foodDetails: FoodInfo;
-
+  public searchField: string;
   constructor(
     private routerAc: ActivatedRoute,
     private appService: AppService,
