@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc, getDoc, query, where } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
  
 export interface Note {
@@ -11,6 +11,7 @@ export interface Note {
 export interface Category {
   id?: string;
   nameCate: string;
+  image: string;
 }
 
 export interface Table {
@@ -22,6 +23,7 @@ export interface Table {
 export interface FoodInfo {
   id?: string;
   nameCateId: string;
+  nameCate: string;
   image: string;
   name: string;
   amount: number;
@@ -60,8 +62,11 @@ export class DataService {
 
   getFoodsInfo(): Observable<FoodInfo[]> {
     const FoodInfoRef = collection(this.firestore, 'foodInfo');
+    //const q = query(FoodInfoRef, where('name', '==', 'cai j do'))
     return collectionData(FoodInfoRef, { idField: 'id'}) as Observable<FoodInfo[]>;
   }
+
+ 
  
   getUser(): Observable<User[]> {
     const UserRef = collection(this.firestore, 'user');
@@ -73,6 +78,16 @@ export class DataService {
     return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
   }
  
+  getFoodById(id): Observable<FoodInfo> {
+    const foodDocRef = doc(this.firestore, `foodInfo/${id}`);
+    return docData(foodDocRef, { idField: 'id' }) as Observable<FoodInfo>;
+  }
+
+  getFoodsByCate(nameCateId) : Observable<FoodInfo[]> {
+    const UserRef = collection(this.firestore, `foodInfo/${nameCateId}`);
+    return collectionData(UserRef, { idField: 'nameCateId'}) as Observable<FoodInfo[]>;
+  }
+
   addNote(note: Note) {
     const notesRef = collection(this.firestore, 'notes');
     return addDoc(notesRef, note);

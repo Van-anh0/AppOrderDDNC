@@ -27,7 +27,7 @@ export class AppService {
   getAllOrderFoods(){
     return this.http.get<any>('../../../assets/model/order-food.json');
   }
-
+d
  
   login() {
     this.getAllUsers().subscribe((res) => {

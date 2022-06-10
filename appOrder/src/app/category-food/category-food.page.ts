@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 
 
 import { AlertController, ModalController } from '@ionic/angular';
@@ -22,10 +22,10 @@ export class CategoryFoodPage implements OnInit {
   }
 
   ngOnInit() {
-    const category = this.routerAc.snapshot.queryParamMap.get('tableid');
-    const filter = this.routerAc.snapshot.queryParamMap.get('id');
-    const filter2 = this.routerAc.snapshot.queryParamMap.get('abc');
-    console.log(`category: ${category} - filter: ${filter} - heo: ${filter2}`);
+    // const category = this.routerAc.snapshot.queryParamMap.get('tableid');
+    // const filter = this.routerAc.snapshot.queryParamMap.get('id');
+    // const filter2 = this.routerAc.snapshot.queryParamMap.get('abc');
+    // console.log(`category: ${category} - filter: ${filter} - heo: ${filter2}`);
   }
   // async getData(){
   //   this.ll=(await fetch('https://fakestoreapi.com/products/categories')
@@ -33,7 +33,13 @@ export class CategoryFoodPage implements OnInit {
   //           .then(json=> json));
   //   console.log(this.ll);
   // }
-  gotoOrderFood(){
-    this.router.navigateByUrl('/order-food');
+  gotoOrderFood(id){
+    const params: NavigationExtras= {
+      queryParams: { id },
+    };
+    
+    this.router.navigate(['/order-food'],params);
   }
+
+  
 }

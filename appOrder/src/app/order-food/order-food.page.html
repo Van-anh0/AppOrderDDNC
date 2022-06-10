@@ -10,12 +10,14 @@
 <ion-content>
   <ion-searchbar [formControl]="searchField" debounce="100"></ion-searchbar>
   <div class="container">
-    <div class="food-card" *ngFor="let food of foods" [routerLink]="[food.id]">
+    <div class="food-card" *ngFor="let food of foods">
+      <div (click) ="goToInfo(food.id)">
       <img src="{{food.image}}" />
       <div class="info-food">
         <h2>{{food.name}}</h2>
         <p>{{food.amount}}đ</p>
       </div>
+    </div>
     </div>
   </div>
 </ion-content>

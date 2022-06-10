@@ -13,7 +13,7 @@
     <div
       class="food-type"
       *ngFor="let item of categories"
-      (click)="gotoOrderFood()"
+      (click)="gotoOrderFood(item.id)"
     >
       <h2>{{item.nameCate}}</h2>
     </div>
