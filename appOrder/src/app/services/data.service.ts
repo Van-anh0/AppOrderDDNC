@@ -26,6 +26,7 @@ export interface Note {
 export interface Category {
   id?: string;
   nameCate: string;
+  image: string;
 }
 
 export interface Table {

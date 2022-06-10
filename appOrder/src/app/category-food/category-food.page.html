@@ -14,6 +14,7 @@
       class="food-type"
       *ngFor="let item of categories"
       (click)="gotoOrderFood()"
+      [style.background]="'url(' + item.image + ')'"
     >
       <h2>{{item.nameCate}}</h2>
     </div>
