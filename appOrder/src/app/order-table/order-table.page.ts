@@ -15,6 +15,7 @@ export class OrderTablePage implements OnInit {
     this.dataService.getTables().subscribe(res => {
       this.tables = res;
       this.cd.detectChanges();
+      console.log(res)
     });
   }
   ngOnInit() {

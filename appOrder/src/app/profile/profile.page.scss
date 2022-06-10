@@ -1,45 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 ion-header {
-  ion-back-button {
-    --icon-font-size: 18px;
-  }
-
-  ion-title {
-    font-size: 15px;
-  }
-
-  ion-icon {
-    position: relative;
-    color: white;
-    font-size: 20px;
-    right: 15px;
-  }
+    ion-back-button {
+        --icon-font-size: 18px;
+    }
+    ion-title {
+        font-size: 15px;
+    }
+    ion-icon {
+        position: relative;
+        color: white;
+        font-size: 20px;
+        right: 15px;
+    }
 }
 
 ion-content {
-  font-family: "Bitter", serif;
-  .container-button {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0 auto;
-    padding: 10px;
-    --ion-color-primary: #f6f6f6;
-    ion-button {
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      color: black;
-      border-radius: 10px;
-      font-weight: 550;
-      text-transform: none;
-      height: 40px;
-      --border-radius: 15px;
+    font-family: "Bitter", serif;
+    .info-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        img {
+            height: 120px;
+            width: 120px;
+        }
+        h3 {
+            margin-top: -2px;
+        }
+        label {
+            margin-top: -6px;
+        }
     }
-    :hover {
-      --ion-color-primary: #ffa724;
-      --transition: 0.8s;
+    .container-button {
+        margin-top: 20px;
     }
-  }
-
-  .lb-noti {
-    margin: 24px 0px 0px 24px;
-  }
+    .ctn-btn {
+        display: flex;
+        flex-direction: row;
+        color: black;
+        font-weight: 550;
+        text-transform: none;
+        padding: 1rem;
+    }
+    .icon-start {
+        margin-right: 5px;
+        height: 20px;
+        width: 20px;
+    }
+    .icon-end {
+        position: absolute;
+        right: 5%;
+    }
+    .lb-noti {
+        margin: 24px 0px 0px 24px;
+    }
+    strong {
+        text-align: center;
+        background-color: rgb(230, 230, 230);
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .other {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+    .notify {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
 }

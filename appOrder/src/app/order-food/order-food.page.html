@@ -13,7 +13,7 @@
     <div
       class="food-card"
       *ngFor="let food of foods | filter:searchField"
-      [routerLink]="[food.id]"
+      [routerLink]="[food.id]" routerLinkActive="active"
     >
       <img src="{{food.image}}" />
       <div class="info-food">
