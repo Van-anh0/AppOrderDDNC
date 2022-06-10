@@ -17,7 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
   },
 
- 
 
   {
     path: 'order-food',
@@ -45,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -76,7 +75,6 @@ const routes: Routes = [
         (m) => m.CategoryFoodPageModule
       ),
   },
-  
   {
     path: 'bottom-tab',
     loadChildren: () => import('./bottom-tab/bottom-tab.module').then( m => m.BottomTabPageModule)

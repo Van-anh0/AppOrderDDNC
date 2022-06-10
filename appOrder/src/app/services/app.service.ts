@@ -24,16 +24,23 @@ export class AppService {
     return this.http.get<any>('../../../assets/model/my-order.json');
   }
 
-  getAllOrderFoods(){
+  getAllOrderFoods() {
     return this.http.get<any>('../../../assets/model/order-food.json');
   }
-d
+
  
   login() {
     this.getAllUsers().subscribe((res) => {
       const user = res.find((a: any) => {
-        return a.account === this.currentUser.account && a.password === this.currentUser.password;
+        return (
+          a.account === this.currentUser.account &&
+          a.password === this.currentUser.password
+        );
       });
     });
+  }
+
+  register() {
+    
   }
 }

@@ -40,8 +40,6 @@ const routes: Routes = [
             path: '',
             loadChildren: () => import('../order-table/order-table.module').then(m => m.OrderTablePageModule)
           },
-          
-          
         ]
       },
       {

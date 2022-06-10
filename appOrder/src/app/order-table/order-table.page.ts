@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
@@ -25,8 +26,9 @@ export class OrderTablePage implements OnInit {
     this.router.navigateByUrl('/my-orders');
   }
 
-  gotoCategory(){
-    this.router.navigateByUrl('/category-food')
+  gotoCategory(id){;
+    this.dataService.createOrder(id);
+    this.router.navigateByUrl('/category-food');
   }
 
   goToCate(){

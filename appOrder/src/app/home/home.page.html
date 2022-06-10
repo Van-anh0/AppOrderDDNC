@@ -12,16 +12,15 @@
   <h1>Món ăn phổ biến</h1>
   <div class="container">
     <div class="food-card" 
-      *ngFor="let item of this.listFood;let i = index;"
-      [routerLink]="[item.id]"
+      *ngFor="let item of foods;let i = index;"
+      [routerLink]="['/order-food/',item.id]"
     >
-      <img [src]="item.image" />
+      <img src="{{item.image}}" />
       <div class="info-food">
-        <h2>{{item.title}}</h2>
-        <p class="category">{{item.category}}</p>
+        <h2>{{item.name}}</h2>
+        <p class="category">{{item.nameCate}}</p>
         <p>
-          <ion-icon name="star"></ion-icon> {{item.rating.rate}}
-          ({{item.rating.count}} Đánh giá)
+          <ion-icon name="star"></ion-icon> {{item.review}}
         </p>
       </div>
     </div>

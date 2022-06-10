@@ -30,7 +30,7 @@ export class InfoFoodPage implements OnInit {
   }
 
   backToOrderFood() {
-    this.router.navigateByUrl('/order-food')
+    this.router.navigateByUrl('/order-food');
   }
 
   getData() {
