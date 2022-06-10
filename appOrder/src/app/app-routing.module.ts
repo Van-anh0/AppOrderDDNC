@@ -8,6 +8,17 @@ const routes: Routes = [
       import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
+    path: 'order-food/:id',
+    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+  },
+
+  {
+    path: 'home/:id',
+    loadChildren: () => import('./info-food/info-food.module').then( m => m.InfoFoodPageModule)
+  },
+
+
+  {
     path: 'order-food',
     loadChildren: () =>
       import('./order-food/order-food.module').then(
@@ -32,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -64,7 +75,6 @@ const routes: Routes = [
         (m) => m.CategoryFoodPageModule
       ),
   },
-
   {
     path: 'bottom-tab',
     loadChildren: () =>

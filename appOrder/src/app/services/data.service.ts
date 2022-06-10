@@ -7,9 +7,13 @@ import {
   docData,
   addDoc,
   deleteDoc,
+  getDocs,
+  getDoc,
   updateDoc,
   where,
   query,
+  DocumentReference,
+  DocumentData
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -33,12 +37,12 @@ export interface Table {
 export interface FoodInfo {
   id?: string;
   nameCateId: string;
-  nameCate: string;
   image: string;
   name: string;
+  nameCate: string;
   amount: number;
   detail: string;
-  review: string;
+  review: number;
 }
 
 export interface User {
@@ -47,7 +51,15 @@ export interface User {
   name: string;
   password: string;
 }
-
+export interface Order {
+  id?: string;
+  foods: {
+    food: string;
+    amount: number;
+  }[];
+  tableId?: string;
+  userId: string;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -77,22 +89,27 @@ export class DataService {
       FoodInfo[]
     >;
   }
+  async getFoodInfo(id: string) {
+    const foodRef =await doc(this.firestore, `foodInfo/${id}`);
+    const food = (await getDoc(foodRef)).data() as FoodInfo;
+    return food;
+  }
 
   getUser(): Observable<User[]> {
     const UserRef = collection(this.firestore, 'user');
     return collectionData(UserRef, { idField: 'id' }) as Observable<User[]>;
   }
+  async getUserById(id){
+    const noteDocRef = doc(this.firestore, `user/${id}`);
+    return docData(noteDocRef, { idField: 'id' }) as Observable<User>;
+  }
 
-  async checkAccount(account: string) {
-    const UserRef = await query(
-      collection(this.firestore, 'user'),
-      where('account', '==', account)
-    );
-    if (UserRef) {
-      console.log(UserRef);
+  async checkAccountExists(account: string) {
+    const userRef = await getDocs(
+      query( collection(this.firestore, 'user'),where('account', '==', account)));
+    if (userRef.empty) {
       return false;
     } else {
-      console.log(UserRef);
       return true;
     }
   }
@@ -125,5 +142,47 @@ export class DataService {
   updateNote(note: Note) {
     const noteDocRef = doc(this.firestore, `notes/${note.id}`);
     return updateDoc(noteDocRef, { title: note.title, text: note.text });
+  }
+  async createOrder(tableId = 0){
+    const user =JSON.parse(localStorage.getItem('user')) as User;
+    const rs =await addDoc(collection(this.firestore, 'order'),
+      {foods: [], userId: user.id, tableId,}
+    );
+    localStorage.setItem('order', rs.id);
+    console.log('tao order');
+    setTimeout(()=>localStorage.removeItem('order'), 1000*60*10);
+    return rs;
+  }
+  async findOrderById(id: string) {
+    return await doc(this.firestore, `order/${id}`);
+  }
+  async addFoodToOrder(food: string ,amount: number = 1){
+    let orderRef = await this.findOrderById(localStorage.getItem('order'));
+    if(!localStorage.getItem('order')){orderRef = await this.createOrder();};
+    const orderData = (await (await getDoc(orderRef)).data()) as Order;
+    const index = orderData.foods.findIndex(e => e.food === food);
+    if(index === -1){
+      orderData.foods.push({food, amount});
+    } else {
+      const ci = orderData.foods[index];
+      orderData.foods[index]={...ci, amount: ci.amount+amount};
+    }
+    console.log('them mon');
+    console.log(orderData);
+    await updateDoc(orderRef, {...orderData} );
+  }
+  async removeFoodToOrder(food: string){
+    let orderRef = await this.findOrderById(localStorage.getItem('order'));
+    if(!localStorage.getItem('order')){orderRef = await this.createOrder();};
+    const orderData = (await (await getDoc(orderRef)).data()) as Order;
+    const newFoods = orderData.foods.filter(i => i.food !== food);
+    orderData.foods = [...newFoods];
+    await updateDoc(orderRef, {...orderData});
+  }
+  async getOrder(){
+    let orderRef = await this.findOrderById(localStorage.getItem('order'));
+    if(!localStorage.getItem('order')){orderRef = await this.createOrder();};
+    if(!orderRef){orderRef = await this.createOrder();};
+    return (await (await getDoc(orderRef)).data()) as Order;
   }
 }

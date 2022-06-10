@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AppService } from '../services/app.service';
-import { FoodInfo } from '../services/data.service';
-import { DataService } from '../services/data.service';
+import { DataService, FoodInfo } from '../services/data.service';
 
 @Component({
   selector: 'app-info-food',
@@ -12,32 +9,33 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./info-food.page.scss'],
 })
 export class InfoFoodPage implements OnInit {
-  foodDetails: FoodInfo;
-  public searchField: string;
+  public foodData: FoodInfo;
+  public id: string;
+  //orderFood = 1;
   constructor(
     private routerAc: ActivatedRoute,
-    private appService: AppService,
     private router: Router,
-    private dataService: DataService
-  ) {}
-
-  ngOnInit() {
-    this.load();
+    private dataSerivce: DataService
+  ) {
+    this.id = this.routerAc.snapshot.paramMap.get('id');
   }
 
-  load() {
-    const id = this.routerAc.snapshot.paramMap.get('id');
-    this.dataService.getFoodById(id).subscribe((res: FoodInfo) => {
-      this.foodDetails = res;
-    });
-    console.log(id);
+  async ngOnInit() {
+    this.foodData = await this.getData(this.id);
   }
 
   backToOrderFood() {
     this.router.navigateByUrl('/order-food');
   }
 
+  getData(id: string) {
+    return this.dataSerivce.getFoodInfo(id);
+  }
+
   review() {
     this.router.navigateByUrl('/rating');
+  }
+  handleOrder(){
+    this.dataSerivce.addFoodToOrder(this.id);
   }
 }

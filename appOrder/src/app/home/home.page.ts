@@ -15,16 +15,13 @@ export class HomePage implements OnInit {
   public searchField: string;
   constructor(
     private router: Router,
-    private storageService: StorageService,
-    private appService: AppService,
     private dataService: DataService,
-    private cd: ChangeDetectorRef
   ) {
-    if (this.storageService.get('user') == null) {
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    if ( currentUser == null) {
       this.router.navigateByUrl('/login');
     } else {
       this.router.navigateByUrl('/bottom-tab');
-      console.log('exists');
     }
   }
   gotoCategory() {
@@ -33,8 +30,8 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getFoodsInfo().subscribe((res) => {
+      res.sort((a, b) => b.review-a.review);
       this.foods = res;
-      this.cd.detectChanges();
     });
   }
 }

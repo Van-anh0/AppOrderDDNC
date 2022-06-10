@@ -11,10 +11,12 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    
   }
-
+  handleLogout(){
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/login');
+  }
   gotoMyOrder(){
-    this.router.navigateByUrl('/my-orders')
+    this.router.navigateByUrl('/my-orders');
   }
 }

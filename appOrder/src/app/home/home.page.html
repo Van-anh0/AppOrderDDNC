@@ -12,8 +12,8 @@
   <h1>Món ăn phổ biến</h1>
   <div class="container">
     <div class="food-card" 
-      *ngFor="let item of foods | filter:searchField;let i = index; "
-      [routerLink]="[item.id]"
+      *ngFor="let item of foods;let i = index;"
+      [routerLink]="['/order-food/',item.id]"
     >
       <img src="{{item.image}}" />
       <div class="info-food">
