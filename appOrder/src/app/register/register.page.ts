@@ -33,26 +33,26 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    if (await this.dataService.checkAccountExists(this.registerForm.value.account)) {
-      const toast = this.toastCtrl.create({
-        message: 'Đăng ký không thành công',
-        duration: 5000,
-        color: 'dark',
-      });
-      (await toast).present();
-    } else {
-      const user = await this.dataService.addUser(this.registerForm.value);
-      const userSnap = await(await (this.dataService.getUserById(user.id)));
-      await userSnap.subscribe(val => {
-        localStorage.setItem('user', JSON.stringify(val));
-      });
-      const toast = this.toastCtrl.create({
-        message: 'Đăng ký thành công',
-        duration: 5000,
-        color: 'dark',
-      });
-      (await toast).present();
-      this.router.navigateByUrl('/bottom-tab');
-    }
+    // if (await this.dataService.checkAccountExists(this.registerForm.value.account)) {
+    //   const toast = this.toastCtrl.create({
+    //     message: 'Đăng ký không thành công',
+    //     duration: 5000,
+    //     color: 'dark',
+    //   });
+    //   (await toast).present();
+    // } else {
+    //   const user = await this.dataService.addUser(this.registerForm.value);
+    //   const userSnap = await(await (this.dataService.getUserById(user.id)));
+    //   await userSnap.subscribe(val => {
+    //     localStorage.setItem('user', JSON.stringify(val));
+    //   });
+    //   const toast = this.toastCtrl.create({
+    //     message: 'Đăng ký thành công',
+    //     duration: 5000,
+    //     color: 'dark',
+    //   });
+    //   (await toast).present();
+    //   this.router.navigateByUrl('/bottom-tab');
+    // }
   }
 }

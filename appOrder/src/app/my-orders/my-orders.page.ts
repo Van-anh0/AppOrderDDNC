@@ -11,17 +11,17 @@ export class MyOrdersPage implements OnInit {
   constructor(private dataService: DataService) {}
 
   async ngOnInit() {
-    this.orderFull = [];
-    const orderData = await this.dataService.getOrder();
-    this.tableId = orderData.tableId === '0' ? 'Mang về': `Bàn ${orderData.tableId}`;
-    for(const i of orderData.foods){
-      const foodInfo = await this.dataService.getFoodInfo(i.food);
-      this.orderFull.push({
-        id: i.food,
-        quantity: i.amount,
-        ... foodInfo
-      });
-    }
+    // this.orderFull = [];
+    // const orderData = await this.dataService.getOrder();
+    // this.tableId = orderData.tableId === '0' ? 'Mang về': `Bàn ${orderData.tableId}`;
+    // for(const i of orderData.foods){
+    //  // const foodInfo = await this.dataService.getFoodInfo(i.food);
+    //   this.orderFull.push({
+    //     id: i.food,
+    //     quantity: i.amount,
+    //     ... foodInfo
+    //   });
+    // }
   }
   async handleRemove(food){
     console.log('huy ' + food );

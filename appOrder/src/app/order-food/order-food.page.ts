@@ -16,11 +16,7 @@ export class OrderFoodPage implements OnInit {
   public foods: FoodInfo[] = [];
   id : string;
   public searchField: FormControl;
-<<<<<<< HEAD
-
-=======
   public filterFoods: FoodInfo[] = [];
->>>>>>> 3f041d66854a43b22f8c0474dde9cce7a2be6157
   constructor(
     private dataService: DataService,
     private cd: ChangeDetectorRef,

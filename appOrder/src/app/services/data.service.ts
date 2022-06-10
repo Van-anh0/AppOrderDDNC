@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc, getDoc, query, where } from '@angular/fire/firestore';
-=======
 import {
   Firestore,
   collection,
@@ -18,7 +15,6 @@ import {
   DocumentReference,
   DocumentData
 } from '@angular/fire/firestore';
->>>>>>> 3f041d66854a43b22f8c0474dde9cce7a2be6157
 import { Observable } from 'rxjs';
 
 export interface Note {
@@ -45,7 +41,7 @@ export interface FoodInfo {
   nameCate: string;
   image: string;
   name: string;
-  nameCate: string;
+
   amount: number;
   detail: string;
   review: number;
@@ -106,15 +102,15 @@ export class DataService {
     return docData(noteDocRef, { idField: 'id' }) as Observable<User>;
   }
 
-  async checkAccountExists(account: string) {
-    const userRef = await getDocs(
-      query( collection(this.firestore, 'user'),where('account', '==', account)));
-    if (userRef.empty) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+  // async checkAccountExists(account: string) {
+  //   const userRef = await getDocs(
+  //     query( collection(this.firestore, 'user'),where('account', '==', account)));
+  //   if (userRef.empty) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
 
   addUser(user: User) {
     const userAdd = collection(this.firestore, 'user');
@@ -125,7 +121,6 @@ export class DataService {
     const noteDocRef = doc(this.firestore, `notes/${id}`);
     return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
   }
-<<<<<<< HEAD
  
   getFoodById(id): Observable<FoodInfo> {
     const foodDocRef = doc(this.firestore, `foodInfo/${id}`);
@@ -133,11 +128,9 @@ export class DataService {
   }
 
   getFoodsByCate(nameCateId) : Observable<FoodInfo[]> {
-    const UserRef = collection(this.firestore, `foodInfo/${nameCateId}`);
+    const UserRef = collection(this.firestore, 'foodInfo');
     return collectionData(UserRef, { idField: 'nameCateId'}) as Observable<FoodInfo[]>;
   }
-=======
->>>>>>> 3f041d66854a43b22f8c0474dde9cce7a2be6157
 
   addNote(note: Note) {
     const notesRef = collection(this.firestore, 'notes');

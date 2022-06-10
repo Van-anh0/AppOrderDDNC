@@ -1,12 +1,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDdcoS55eUbkCjhqhPquFsSyHCCTEK81IE',
-    authDomain: 'ionicapporder.firebaseapp.com',
-    projectId: 'ionicapporder',
-    storageBucket: 'ionicapporder.appspot.com',
-    messagingSenderId: '603776351298',
-    appId: '1:603776351298:web:e24c94ffbeffa1e10a01db',
-    measurementId: 'G-G300LTESET',
+    apiKey: "AIzaSyCGBUDbKoiq3jeOxSEUcV79_7U-N2GGHuw",
+    authDomain: "myapporder-fa20d.firebaseapp.com",
+    projectId: "myapporder-fa20d",
+    storageBucket: "myapporder-fa20d.appspot.com",
+    messagingSenderId: "163922099161",
+    appId: "1:163922099161:web:993a1dace56fb9faa9b7c8",
+    measurementId: "G-YLP0PW1VFP"
   },
 };
