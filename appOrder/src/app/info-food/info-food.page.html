@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true" color="light">
   <div class="header">
-    <ion-img class="img-Food" [src]="this.foodData.image">
+    <ion-img class="img-Food" [src]="this.foodData?.image">
     </ion-img>
     <ion-button class="backToOrderFood" (click)="backToOrderFood()">
       <ion-icon name="chevron-back-outline"></ion-icon>
@@ -10,20 +10,20 @@
     </ion-button>
   </div>
   <div class="info-food">
-    <h1>{{this.foodData.name}}</h1>
+    <h1>{{this.foodData?.name}}</h1>
     <p>
-      <ion-icon name="star"></ion-icon> {{this.foodData.review}} (<span>286</span>
+      <ion-icon name="star"></ion-icon> {{this.foodData?.review}} (<span>286</span>
       Đánh giá)
     </p>
-    <p class="category">{{this.foodData.nameCate}}</p>
+    <p class="category">{{this.foodData?.nameCate}}</p>
     <p>
-      {{this.foodData.detail}}
+      {{this.foodData?.detail}}
     </p>
   </div>
   <div class="footer">
     <div class="price">
       <p><small>Giá:</small></p>
-      <p>{{this.foodData.amount}}</p>
+      <p>{{this.foodData?.amount}}</p>
     </div>
 
     <div class="group-button">
