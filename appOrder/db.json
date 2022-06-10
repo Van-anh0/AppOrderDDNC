@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "account": "thiensoncva01@gmail.com",
+      "password": "123456",
+      "name": "thien son"
+    },
+    {
+      "id": "2",
+      "account": "thiensoncva02@gmail.com",
+      "password": "123456",
+      "name": "thien son 2"
+    },
+    {
+      "account": "thiensoncva03@gmail.com",
+      "password": "123456",
+      "name": "thienson",
+      "id": "ASRkJ0y"
+    },
+    {
+      "account": "trungnguyen@gmail.com",
+      "password": "123456",
+      "name": "Nguyễn Trung nguyên",
+      "id": "HRjMHxV"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

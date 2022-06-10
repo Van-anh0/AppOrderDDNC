@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="end">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-buttons>
+    <ion-title color="light"> Trang chủ </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar></ion-searchbar>
+  <h1>Món ăn phổ biến</h1>
+  <div class="container">
+    <div class="food-card" 
+      *ngFor="let item of this.listFood;let i = index;"
+      [routerLink]="[item.id]"
+    >
+      <img [src]="item.image" />
+      <div class="info-food">
+        <h2>{{item.title}}</h2>
+        <p class="category">{{item.category}}</p>
+        <p>
+          <ion-icon name="star"></ion-icon> {{item.rating.rate}}
+          ({{item.rating.count}} Đánh giá)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ion-footer>
+   <div class="container-control">
+        <ion-button fill="clear" class="control-button">
+          <div>
+          <ion-icon name="home-outline"></ion-icon>
+          <span>Home</span>
+          </div>
+        </ion-button>
+        <ion-button fill="clear">
+          <div>
+            <ion-icon name="chatbubble-ellipses"></ion-icon>
+           <span>Message</span> 
+          </div>
+        </ion-button>
+        <ion-button fill="clear">
+          <div>
+            <ion-icon name="newspaper-outline"></ion-icon>
+           <span>Order</span> 
+          </div>
+        </ion-button>
+        <ion-button fill="clear">
+          <div>
+            <ion-icon name="call-outline"></ion-icon>
+            <span>Contact</span>
+          </div>
+        </ion-button>
+        <ion-button fill="clear">
+          <div>
+            <ion-icon name="settings"></ion-icon>
+           <span>Settings</span> 
+          </div>
+        </ion-button>
+    </div>
+  </ion-footer> -->
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"> </ion-back-button>
+        </ion-buttons>
+        <!-- <ion-buttons slot="end">
+            <ion-icon name="notifications"></ion-icon>
+            <ion-icon name="cart" slot="end"></ion-icon>
+        </ion-buttons> -->
+        <ion-title color="light"> Cài đặt </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="info-user">
+        <img src="https://thumbs.dreamstime.com/b/user-icon-orange-round-sign-vector-illustration-isolated-white-background-user-icon-orange-round-sign-112808533.jpg" alt="">
+        <h3>Trung Nguyên</h3>
+        <label for="">trungnguyen@gmail.com</label>
+    </div>
+
+    <div class="container-button">
+        <!-- <strong>Thông báo</strong> -->
+        <div class="notify">
+            <div class="ctn-btn">
+                <ion-icon name="notifications-outline" class="icon-start"></ion-icon>
+                Thông báo ứng dụng
+                <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+            </div>
+
+            <div class="ctn-btn">
+                <ion-icon name="mail-outline" class="icon-start"></ion-icon>
+                Thông báo Email & SMS
+                <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+            </div>
+            <div class="ctn-btn">
+                <ion-icon name="reader-outline" class="icon-start"></ion-icon>
+                Thông báo đặt trước
+                <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <!-- <strong>Khác</strong> -->
+    <div class="other">
+        <div class="ctn-btn">
+            <ion-icon name="chatbox-ellipses-outline" class="icon-start"></ion-icon>
+            Gửi feedback
+            <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+        </div>
+        <div class="ctn-btn">
+            <ion-icon name="help-circle-outline" class="icon-start"></ion-icon>
+            Help
+            <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+        </div>
+        <div class="ctn-btn">
+            <ion-icon name="notifications-outline" class="icon-start"></ion-icon>
+            Đăng xuất
+            <ion-icon name="chevron-forward-outline" class="icon-end"></ion-icon>
+        </div>
+    </div>
+</ion-content>
